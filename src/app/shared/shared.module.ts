@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { GridsterModule } from 'angular-gridster2';
 
 import { MaterialModule } from './material.module';
 
@@ -14,7 +15,8 @@ import { ConfirmationDialog } from './components/confirmation-dialog/confirmatio
         ReactiveFormsModule,
         TranslateModule,
         FlexLayoutModule,
-        MaterialModule
+        MaterialModule,
+        GridsterModule
     ],
     exports: [
         CommonModule,
@@ -22,7 +24,8 @@ import { ConfirmationDialog } from './components/confirmation-dialog/confirmatio
         TranslateModule,
         FlexLayoutModule,
         MaterialModule,
-        ConfirmationDialog
+        ConfirmationDialog,
+        GridsterModule
     ],
     declarations: [
         ConfirmationDialog

@@ -1,13 +1,12 @@
 <div fxLayout="column" fxLayoutAlign="start center">
   
-    <mat-card fxFlex>
+    <!-- <mat-card fxFlex>
         <mat-card-header>
           <div mat-card-avatar class="profile-image-thumbnail"></div>
           <mat-card-title class="about-me-title">George Knap</mat-card-title>
-          <mat-card-subtitle class="about-me-subtitle">It doesn't take much to make web apps simple and elegant</mat-card-subtitle>
+          <mat-card-subtitle class="about-me-subtitle" translate>aboutMe.subtitle</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
+                <mat-card-content>
           <p>
             The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
             A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
@@ -18,6 +17,14 @@
           <button mat-button>LIKE</button>
           <button mat-button>SHARE</button>
         </mat-card-actions>
-      </mat-card>
+      </mat-card> -->
+
+      <gridster id="gridster" [options]="gridsterOptions" *ngIf="cards">
+        <gridster-item [item]="card" *ngFor="let card of cards">
+            <mat-card>
+              <p>{{card.card}}</p>
+            </mat-card>
+        </gridster-item>
+    </gridster>
 
 </div>
