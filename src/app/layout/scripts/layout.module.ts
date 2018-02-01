@@ -4,6 +4,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { LayoutRoutingModule } from './layout-routing.module';
 
 import { LayoutComponent } from '../layout.component';
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { LayoutComponent } from '../layout.component';
                 LayoutRoutingModule
             ],
         declarations: [
-                LayoutComponent
+                LayoutComponent,
+                DashboardComponent
             ],
         entryComponents: [],
         providers: [

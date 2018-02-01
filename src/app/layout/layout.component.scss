@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+
+.mat-icon-button {
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+mat-toolbar {
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+
+    .mat-button {
+        margin: 0 5px 0 5px;
+    }
+}
+
+.content {
+    padding-top: 64px;
+    background-color: $primary-color-light !important;
+}
