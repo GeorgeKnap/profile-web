@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ParallaxModule } from 'ngx-parallax';
 
 import { MaterialModule } from './shared/material.module';
 import { CoreModule } from './core.module';
@@ -26,6 +27,7 @@ export function httpLoaderFactory(http: HttpClient) {
         BrowserAnimationsModule,
         CommonModule,
         HttpClientModule,
+        ParallaxModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

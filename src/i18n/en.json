@@ -1,3 +1,11 @@
 {
-    "appHeader":"George Knap"
+    "appHeader": "George Knap",
+    "languages": {
+        "en": "English",
+        "cs": "Čeština"
+    },
+    "appUpdate": {
+        "question": "A new version is available. Required files will be downloaded which may take a moment. Page reload will follow when update is done. Would you like to update now?",
+        "title": "New app version available"
+    }
 }
