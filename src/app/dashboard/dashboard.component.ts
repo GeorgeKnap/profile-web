@@ -3,6 +3,7 @@ import { GridsterConfig } from 'angular-gridster2';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { GridItem } from './models/grid-item.model';
 import { Card } from './models/card.enum';
+import { StorageService } from '../shared/services/storage.service';
 
 @Component({
     selector: 'gk-dashboard',
@@ -28,7 +29,7 @@ export class DashboardComponent implements OnInit {
         maxItemRows: 1,
         itemChangeCallback: (newPosition: GridItem) => {
             console.log('grid item event: ', newPosition);
-            //todo: save to local storage
+            this.storageService.setLocalItem('gk.personal-web.gridsterSettings', JSON.stringify(this.gridItems));
         },
         draggable: {
             enabled: true,
@@ -62,8 +63,18 @@ export class DashboardComponent implements OnInit {
         }
     ];
 
+
+    constructor(
+        private readonly storageService: StorageService
+    ) { }
+
     ngOnInit() {
-        this.gridItems = [...this.defaultGridItems];
+        let storageGridster = this.storageService.getLocalItem('gk.personal-web.gridsterSettings');
+        if (storageGridster) {
+            this.gridItems = JSON.parse(storageGridster);
+        } else {
+            this.gridItems = [...this.defaultGridItems];
+        }
     }
 
 }
