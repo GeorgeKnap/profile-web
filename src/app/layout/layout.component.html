@@ -1,6 +1,11 @@
 <mat-toolbar>
     <mat-toolbar-row>
         <div fxFlex="1 1 auto"></div>
+
+        <button mat-icon-button (click)="resetGridster()" translate>
+            <mat-icon>restore</mat-icon>
+        </button>
+
         <button mat-icon-button [matMenuTriggerFor]="toolbarLangMenu" attr.aria-label="{{'languages.'+ currentLang | translate}}"
             fxHide fxShow.gt-sm>
             <mat-icon svgIcon="intens:{{currentLang}}"></mat-icon>

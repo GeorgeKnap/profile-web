@@ -11,6 +11,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { DomSanitizer } from '@angular/platform-browser';
         MatProgressSpinnerModule,
         MatSidenavModule,
         MatSnackBarModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatTooltipModule
     ],
     declarations: [],
     exports: [
@@ -38,7 +40,8 @@ import { DomSanitizer } from '@angular/platform-browser';
         MatProgressSpinnerModule,
         MatSidenavModule,
         MatSnackBarModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatTooltipModule
     ]
 })
 export class MaterialModule {

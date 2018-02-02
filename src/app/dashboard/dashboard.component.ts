@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GridsterConfig } from 'angular-gridster2';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import 'rxjs/add/operator/takeUntil';
+import { Subject } from 'rxjs/Subject';
+
 import { GridItem } from './models/grid-item.model';
 import { Card } from './models/card.enum';
 import { StorageService } from '../shared/services/storage.service';
+import { ResetGridsterService } from '../shared/services/reset-gridster.service';
 
 @Component({
     selector: 'gk-dashboard',
@@ -11,8 +14,9 @@ import { StorageService } from '../shared/services/storage.service';
     styleUrls: ['./dashboard.component.scss']
 })
 
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
+    gridItems!: Array<GridItem>;
     gridsterOptions: GridsterConfig = {
         gridType: 'fit',
         keepFixedHeightInMobile: false,
@@ -44,28 +48,29 @@ export class DashboardComponent implements OnInit {
         swap: true
     };
 
-    gridItems!: Array<GridItem>;
-
-    private defaultGridItems: Array<GridItem> = [
-        {
-            card: Card.AboutMe,
-            cols: 2,
-            rows: 1,
-            x: 0,
-            y: 0
-        },
-        {
-            card: Card.EmploymentHistory,
-            cols: 1,
-            rows: 1,
-            x: 0,
-            y: 1
-        }
-    ];
-
+    private ngUnsubscribe: Subject<any> = new Subject();
+    private get defaultGridItems(): Array<GridItem> {
+        return [
+            {
+                card: Card.AboutMe,
+                cols: 2,
+                rows: 1,
+                x: 0,
+                y: 0
+            },
+            {
+                card: Card.EmploymentHistory,
+                cols: 1,
+                rows: 1,
+                x: 0,
+                y: 1
+            }
+        ];
+    }
 
     constructor(
-        private readonly storageService: StorageService
+        private readonly storageService: StorageService,
+        private readonly resetGridsterService: ResetGridsterService
     ) { }
 
     ngOnInit() {
@@ -75,6 +80,16 @@ export class DashboardComponent implements OnInit {
         } else {
             this.gridItems = [...this.defaultGridItems];
         }
+
+        this.resetGridsterService.resetGridster$.takeUntil(this.ngUnsubscribe).subscribe(() => {
+            this.gridItems = [...this.defaultGridItems];
+            this.storageService.setLocalItem('gk.personal-web.gridsterSettings', JSON.stringify(this.defaultGridItems));
+        });
+    }
+
+    ngOnDestroy() {
+        this.ngUnsubscribe.next();
+        this.ngUnsubscribe.complete();
     }
 
 }

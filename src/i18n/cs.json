@@ -8,6 +8,9 @@
         "question": "K dispozici je nová verze aplikace. Aktualizace může chvíli trvat a bude následována znovunačtením okna prohlížeče. Chcete nyní aktualizaci provést?",
         "title": "Nová verze aplikace"
     },
+    "menu": {
+        "resetGridster": "Obnovit polohu karet"
+    },
     "aboutMe": {
         "subtitle": "Není tak složité psát čisté a elegantní webové aplikace"
     }

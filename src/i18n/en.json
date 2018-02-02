@@ -8,6 +8,9 @@
         "question": "A new version is available. Required files will be downloaded which may take a moment. Page reload will follow when update is done. Would you like to update now?",
         "title": "New app version available"
     },
+    "menu": {
+        "resetGridster": "Restore Cards' Positions"
+    },
     "aboutMe": {
         "subtitle": "It doesn't take much to make web apps clean and elegant"
     }

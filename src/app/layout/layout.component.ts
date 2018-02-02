@@ -4,7 +4,8 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 
-import {StorageService} from '../shared/services/storage.service';
+import { StorageService } from '../shared/services/storage.service';
+import { ResetGridsterService } from '../shared/services/reset-gridster.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
     constructor(
         private readonly translateService: TranslateService,
         private readonly storageService: StorageService,
-        private readonly titleService: Title
+        private readonly titleService: Title,
+        private readonly resetGridsterService: ResetGridsterService
     ) {
         this.currentLang = this.translateService.currentLang;
         this.translateService.onLangChange.takeUntil(this.ngUnsubscribe).subscribe((evt: LangChangeEvent) => {
@@ -34,6 +36,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
     changeLang(lang: string) {
         this.translateService.use(lang);
+    }
+
+    resetGridster() {
+        this.resetGridsterService.resetGridster();
     }
 
 
