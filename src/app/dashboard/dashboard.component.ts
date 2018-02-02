@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { GridsterConfig } from 'angular-gridster2';
-import { GridItem } from 'src/app/dashboard/models/grid-item';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-import { Card } from './models/card';
+import { GridItem } from './models/grid-item.model';
+import { Card } from './models/card.enum';
 
 @Component({
     selector: 'gk-dashboard',
@@ -12,21 +12,20 @@ import { Card } from './models/card';
 
 export class DashboardComponent implements OnInit {
 
-    cards: Array<GridItem> = new Array();
-
     gridsterOptions: GridsterConfig = {
-        gridType: 'fixed',
-        fixedColWidth: 450,
-        fixedRowHeight: 450,
-        keepFixedHeightInMobile: true,
-        compactType: 'compactUp',
-        maxCols: 2,
-        margin: 12,
-        outerMargin: false,
+        gridType: 'fit',
+        keepFixedHeightInMobile: false,
+        compactType: 'none',
+        minCols: 2,
+        maxCols: 3,
+        outerMarginLeft: 12,
+        outerMarginRight: 12,
         maxRows: 10,
         defaultItemCols: 1,
+        minItemCols: 1,
         maxItemCols: 2,
-        maxItemRows: 2,
+        minItemRows: 1,
+        maxItemRows: 1,
         itemChangeCallback: (newPosition: GridItem) => {
             console.log('grid item event: ', newPosition);
             //todo: save to local storage
@@ -34,21 +33,22 @@ export class DashboardComponent implements OnInit {
         draggable: {
             enabled: true,
             ignoreContent: true,
-            dragHandleClass: 'dragabble'
+            dragHandleClass: 'draggable'
         },
         resizable: {
-            enabled: false
+            enabled: true
         },
         pushItems: true,
         pushResizeItems: false,
         swap: true
     };
 
-    ngOnInit() {
-        this.cards = [
-            {
+    gridItems!: Array<GridItem>;
+
+    private defaultGridItems: Array<GridItem> = [
+        {
             card: Card.AboutMe,
-            cols: 1,
+            cols: 2,
             rows: 1,
             x: 0,
             y: 0
@@ -57,10 +57,13 @@ export class DashboardComponent implements OnInit {
             card: Card.EmploymentHistory,
             cols: 1,
             rows: 1,
-            x: 1,
-            y: 0
+            x: 0,
+            y: 1
         }
     ];
+
+    ngOnInit() {
+        this.gridItems = [...this.defaultGridItems];
     }
 
 }

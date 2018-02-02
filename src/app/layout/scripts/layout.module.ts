@@ -4,17 +4,17 @@ import { SharedModule } from '../../shared/shared.module';
 import { LayoutRoutingModule } from './layout-routing.module';
 
 import { LayoutComponent } from '../layout.component';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { DashboardModule } from '../../dashboard/scripts/dashboard.module';
 
 
 @NgModule({
         imports: [
                 SharedModule,
-                LayoutRoutingModule
+                LayoutRoutingModule,
+                DashboardModule
             ],
         declarations: [
-                LayoutComponent,
-                DashboardComponent
+                LayoutComponent
             ],
         entryComponents: [],
         providers: [

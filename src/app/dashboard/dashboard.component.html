@@ -1,30 +1,5 @@
-<div fxLayout="column" fxLayoutAlign="start center">
-  
-    <!-- <mat-card fxFlex>
-        <mat-card-header>
-          <div mat-card-avatar class="profile-image-thumbnail"></div>
-          <mat-card-title class="about-me-title">George Knap</mat-card-title>
-          <mat-card-subtitle class="about-me-subtitle" translate>aboutMe.subtitle</mat-card-subtitle>
-        </mat-card-header>
-                <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card> -->
-
-      <gridster id="gridster" [options]="gridsterOptions" *ngIf="cards">
-        <gridster-item [item]="card" *ngFor="let card of cards">
-            <mat-card>
-              <p>{{card.card}}</p>
-            </mat-card>
-        </gridster-item>
-    </gridster>
-
-</div>
+<gridster id="gridster" [options]="gridsterOptions" *ngIf="gridItems">
+    <gridster-item [item]="gridItem" *ngFor="let gridItem of gridItems">
+        <gk-card-wrapper [gridItem]="gridItem"></gk-card-wrapper>
+    </gridster-item>
+</gridster>
