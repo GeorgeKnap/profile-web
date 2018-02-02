@@ -6,7 +6,7 @@
             <mat-icon>restore</mat-icon>
         </button>
 
-        <button mat-icon-button [matMenuTriggerFor]="toolbarLangMenu" attr.aria-label="{{'languages.'+ currentLang | translate}}"
+        <button mat-icon-button [matMenuTriggerFor]="toolbarLangMenu" attr.aria-label="{{'languages.'+ currentLang | translate}}" matTooltip="{{'menu.language' | translate}}"
             fxHide fxShow.gt-sm>
             <mat-icon svgIcon="intens:{{currentLang}}"></mat-icon>
         </button>

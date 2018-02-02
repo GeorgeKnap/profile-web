@@ -9,7 +9,8 @@
         "title": "Nová verze aplikace"
     },
     "menu": {
-        "resetGridster": "Obnovit polohu karet"
+        "resetGridster": "Obnovit polohu karet",
+        "language":"Zvolte jazyk"
     },
     "aboutMe": {
         "subtitle": "Není tak složité psát čisté a elegantní webové aplikace"
