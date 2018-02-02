@@ -2,6 +2,7 @@
 
 .material-table {
     border-collapse: collapse;
+    width: 100%;
 
     thead {
         tr {
@@ -31,10 +32,6 @@
 
             td {
                 padding: 4px;
-
-                .chapter-label {
-                    color: $primary-color-dark;
-                }
 
                 label {
                     font-weight: bolder;

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutMeComponent implements OnInit {
 
-
+  myAge: number = 33;
   ngOnInit() {
     //
   }

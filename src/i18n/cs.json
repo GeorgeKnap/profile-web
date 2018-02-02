@@ -13,6 +13,10 @@
         "language":"Zvolte jazyk"
     },
     "aboutMe": {
-        "subtitle": "Není tak složité psát čisté a elegantní webové aplikace"
+        "subtitle": "Není tak složité psát čisté a elegantní webové aplikace",
+        "age":"Věk",
+        "email":"e-mail",
+        "phone":"Telefon",
+        "years":"let"
     }
 }

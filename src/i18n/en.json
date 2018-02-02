@@ -13,6 +13,10 @@
         "language":"Select Language"
     },
     "aboutMe": {
-        "subtitle": "It doesn't take much to make web apps clean and elegant"
+        "subtitle": "It doesn't take much to make clean and elegant web solutions",
+        "age":"Age",
+        "email":"E-mail",
+        "phone":"Phone Number",
+        "years":"years old"
     }
 }

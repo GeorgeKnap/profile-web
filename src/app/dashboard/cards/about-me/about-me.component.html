@@ -4,8 +4,31 @@
     <mat-card-title class="about-me-title">George Knap</mat-card-title>
     <mat-card-subtitle class="about-me-subtitle" translate>aboutMe.subtitle</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="/assets/images/profilovka.png" alt="George Knap profile photo" >
+  <img mat-card-image src="/assets/images/profilovka_card.png" alt="George Knap profile photo">
   <mat-card-content>
-
+    <article>
+      <table class="material-table">
+        <tbody>
+          <tr>
+            <td translate>aboutMe.age</td>
+            <td>
+              <span>{{myAge}} {{'aboutMe.years' | translate}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td translate>aboutMe.email</td>
+            <td>
+              <a href="mailto:jirka.knap@gmail.com">jirka.knap@gmail.com</a>
+            </td>
+          </tr>
+          <tr>
+            <td translate>aboutMe.phone</td>
+            <td>
+              <a href="tel:00420777635732">+420 777 635 732</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
   </mat-card-content>
 </mat-card>
