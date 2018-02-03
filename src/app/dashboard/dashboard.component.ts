@@ -19,21 +19,23 @@ export class DashboardComponent implements OnInit, OnDestroy {
     gridItems!: Array<GridItem>;
     gridsterOptions: GridsterConfig = {
         gridType: 'fit',
+        fixedColWidth: 100,
+        fixedRowHeight: 100,
         keepFixedHeightInMobile: false,
         compactType: 'none',
         minCols: 24,
         maxCols: 24,
         minRows: 24,
-        maxRows: 500,
+        maxRows: 50,
         outerMarginLeft: 12,
         outerMarginRight: 12,
-
-        defaultItemCols: 1,
-        defaultItemRows: 1,
+        displayGrid: 'always',
+        defaultItemCols: 10,
+        defaultItemRows: 10,
         minItemCols: 1,
         maxItemCols: 12,
         minItemRows: 1,
-        maxItemRows: 100,
+        maxItemRows: 50,
         itemChangeCallback: (newPosition: GridItem) => {
             console.log('grid item event: ', newPosition);
             this.storageService.setLocalItem('gk.personal-web.gridsterSettings', JSON.stringify(this.gridItems));
@@ -44,7 +46,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             dragHandleClass: 'draggable'
         },
         resizable: {
-            enabled: true
+            enabled: false
         },
         pushItems: true,
         pushResizeItems: false,
@@ -57,7 +59,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             {
                 card: Card.AboutMe,
                 cols: 9,
-                rows: 50,
+                rows: 6,
                 x: 1,
                 y: 0
             },

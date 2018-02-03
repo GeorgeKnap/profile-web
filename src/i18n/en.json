@@ -10,13 +10,14 @@
     },
     "menu": {
         "resetGridster": "Restore Cards Positions",
-        "language":"Select Language"
+        "language": "Select Language"
     },
     "aboutMe": {
         "subtitle": "It doesn't take much to make clean and elegant web solutions",
-        "age":"Age",
-        "email":"E-mail",
-        "phone":"Phone Number",
-        "years":"years old"
+        "age": "Age",
+        "email": "E-mail",
+        "phone": "Phone Number",
+        "years": "years old",
+        "technologies": "Core Technologies"
     }
 }

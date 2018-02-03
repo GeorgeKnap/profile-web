@@ -2,7 +2,7 @@
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-    selector: 'intens-confirmation-dialog',
+    selector: 'gk-confirmation-dialog',
     template: `
 <h3 mat-dialog-title>
     <span translate>{{titleKey}}</span>

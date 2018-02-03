@@ -1,10 +1,12 @@
 <mat-card>
-  <mat-card-header class="draggable">
-    <div mat-card-avatar class="profile-image-thumbnail"></div>
-    <mat-card-title class="about-me-title">George Knap</mat-card-title>
-    <mat-card-subtitle class="about-me-subtitle" translate>aboutMe.subtitle</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="/assets/images/profilovka_card.png" alt="George Knap profile photo">
+  <mat-card-title-group class="draggable">
+    <mat-card-header>
+      <div mat-card-avatar class="profile-image-thumbnail"></div>
+      <mat-card-title class="about-me-title">George Knap</mat-card-title>
+      <mat-card-subtitle class="about-me-subtitle" translate>aboutMe.subtitle</mat-card-subtitle>
+      <img src="/assets/images/profilovka_card.png" alt="George Knap profile photo" style="width: 120px; height: 100px">
+    </mat-card-header>
+  </mat-card-title-group>
   <mat-card-content>
     <article>
       <table class="material-table">
@@ -27,8 +29,23 @@
               <a href="tel:00420777635732">+420 777 635 732</a>
             </td>
           </tr>
+          <tr>
+            <td translate>aboutMe.technologies</td>
+            <td>
+              <mat-chip-list>
+                <mat-chip (click)="toAngular()">Angular</mat-chip>
+                <mat-chip (click)="toMaterial()">Angular Material</mat-chip>
+                <mat-chip (click)="toFirebase()">Firebase</mat-chip>
+                <mat-chip (click)="toAgGrid()">Ag-Grid</mat-chip>
+                <mat-chip (click)="toNativeScript()">NativeScript</mat-chip>
+              </mat-chip-list>
+            </td>
+          </tr>
         </tbody>
       </table>
     </article>
   </mat-card-content>
+  <mat-card-actions>
+    <div class="fb-messengermessageus" messenger_app_id="95100348886" page_id="10153006539378183" color="blue" size="large"></div>
+  </mat-card-actions>
 </mat-card>

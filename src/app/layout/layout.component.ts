@@ -9,7 +9,7 @@ import { ResetGridsterService } from '../shared/services/reset-gridster.service'
 
 
 @Component({
-    selector: 'intens-layout',
+    selector: 'gk-layout',
     templateUrl: './layout.component.html',
     styleUrls: ['./layout.component.scss']
 })

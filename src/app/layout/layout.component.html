@@ -8,14 +8,14 @@
 
         <button mat-icon-button [matMenuTriggerFor]="toolbarLangMenu" attr.aria-label="{{'languages.'+ currentLang | translate}}" matTooltip="{{'menu.language' | translate}}"
             fxHide fxShow.gt-sm>
-            <mat-icon svgIcon="intens:{{currentLang}}"></mat-icon>
+            <mat-icon svgIcon="gk:{{currentLang}}"></mat-icon>
         </button>
         <mat-menu #toolbarLangMenu="matMenu">
             <button mat-icon-button (click)="changeLang('en')">
-                <mat-icon svgIcon="intens:en"></mat-icon>
+                <mat-icon svgIcon="gk:en"></mat-icon>
             </button>
             <button mat-icon-button (click)="changeLang('cs')">
-                <mat-icon svgIcon="intens:cs"></mat-icon>
+                <mat-icon svgIcon="gk:cs"></mat-icon>
             </button>
         </mat-menu>
     </mat-toolbar-row>

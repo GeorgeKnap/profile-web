@@ -17,6 +17,7 @@
         "age":"Věk",
         "email":"e-mail",
         "phone":"Telefon",
-        "years":"let"
+        "years":"let",
+        "technologies":"Používané technologie"
     }
 }
