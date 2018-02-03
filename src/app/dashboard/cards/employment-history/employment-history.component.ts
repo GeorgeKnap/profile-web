@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'gk-employment-history',
   templateUrl: './employment-history.component.html',
   styleUrls: ['./employment-history.component.scss']
 })
-export class EmploymentHistoryComponent implements OnInit {
+export class EmploymentHistoryComponent {
 
-  constructor() { }
+  step = 0;
 
-  ngOnInit() {
+  setStep(index: number) {
+    this.step = index;
   }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
 
 }

@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { MatChipsModule } from '@angular/material/chips';
         MatCardModule,
         MatChipsModule,
         MatDialogModule,
+        MatExpansionModule,
         MatIconModule,
         MatInputModule,
         MatListModule,
@@ -32,6 +34,7 @@ import { MatChipsModule } from '@angular/material/chips';
         MatCardModule,
         MatChipsModule,
         MatDialogModule,
+        MatExpansionModule,
         MatIconModule,
         MatListModule,
         MatInputModule,

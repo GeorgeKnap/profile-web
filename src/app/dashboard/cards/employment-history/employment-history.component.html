@@ -1,9 +1,54 @@
-<mat-card>
-  <mat-card-header class="draggable">
-    <div mat-card-avatar></div>
-    <mat-card-title class="about-me-title">Eployment History</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
+<h3 class="draggable">
+  Employment history</h3>
+<mat-accordion class="draggable">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        2017-dosud
+      </mat-panel-title>
+      <mat-panel-description>
+        Freelancer pro vývoj Progressive Web Apps>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>lorem ipsum dolor si amet</p>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
 
-  </mat-card-content>
-</mat-card>
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        2016 - dosud
+      </mat-panel-title>
+      <mat-panel-description>
+        INTENS Corporation s.r.o
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p></p>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        2014-2016
+      </mat-panel-title>
+      <mat-panel-description>
+        Veropath
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Veropath was great experience</p>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">End</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</mat-accordion>
