@@ -5,7 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { AboutMeComponent } from '../cards/about-me/about-me.component';
 import { CardWrapperComponent } from '../cards/card-wrapper/card-wrapper.component';
-import { EmploymentHistoryComponent } from '../cards/employment-history.component';
+import { EmploymentHistoryComponent } from '../cards/employment-history/employment-history.component';
 
 @NgModule({
     imports: [

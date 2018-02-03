@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         return [
             {
                 card: Card.AboutMe,
-                cols: 9,
+                cols: 11,
                 rows: 6,
                 x: 1,
                 y: 0
@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 card: Card.EmploymentHistory,
                 cols: 10,
                 rows: 4,
-                x: 11,
+                x: 13,
                 y: 0
             }
         ];
