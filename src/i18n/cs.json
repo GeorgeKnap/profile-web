@@ -10,14 +10,16 @@
     },
     "menu": {
         "resetGridster": "Obnovit polohu karet",
-        "language":"Zvolte jazyk"
+        "language": "Zvolte jazyk"
     },
     "aboutMe": {
         "subtitle": "Není tak složité psát čisté a elegantní webové aplikace",
-        "age":"Věk",
-        "email":"e-mail",
-        "phone":"Telefon",
-        "years":"let",
-        "technologies":"Používané technologie"
+        "age": "Věk",
+        "email": "e-mail",
+        "phone": "Telefon",
+        "years": "let",
+        "technologies": "Používané technologie",
+        "messenger": "Kontaktovat na Facebook Messenger",
+        "linkedin": "LinkedIn profil"
     }
 }

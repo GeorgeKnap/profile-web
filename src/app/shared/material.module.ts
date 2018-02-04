@@ -53,6 +53,7 @@ export class MaterialModule {
         this.matIconRegistry.addSvgIconInNamespace('gk', 'cs', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/lang/cs.svg'));
         this.matIconRegistry.addSvgIconInNamespace('gk', 'angular', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/angular.svg'));
         this.matIconRegistry.addSvgIconInNamespace('gk', 'linkedin', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/Linkedin_icon.svg'));
+        this.matIconRegistry.addSvgIconInNamespace('gk', 'messenger', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/facebook-messenger.svg'));
     }
 
 }

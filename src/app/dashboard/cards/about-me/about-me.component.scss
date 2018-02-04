@@ -18,6 +18,13 @@ mat-chip {
     margin-bottom: 4px;
 }
 
-.fb-messengermessageus {
-    margin-right: 12px;
+mat-card-actions {
+    a{
+        mat-icon{
+            height: 26px; 
+            width: 26px; 
+            margin-right: 12px; 
+            margin-left: 12px;
+        }
+    }
 }

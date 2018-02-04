@@ -18,6 +18,8 @@
         "email": "E-mail",
         "phone": "Phone Number",
         "years": "years old",
-        "technologies": "Core Technologies"
+        "technologies": "Core Technologies",
+        "messenger": "Contact me at Facebook Messenger",
+        "linkedin": "LinkedIn profile"
     }
 }
