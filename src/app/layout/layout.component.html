@@ -1,13 +1,16 @@
 <mat-toolbar>
     <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
+            <mat-icon>menu</mat-icon>
+        </button>
         <div fxFlex="1 1 auto"></div>
 
-        <button mat-icon-button (click)="resetGridster()" translate matTooltip="{{'menu.resetGridster' | translate}}">
+        <button mat-icon-button (click)="resetGridster()" translate matTooltip="{{'menu.resetGridster' | translate}}" fxHide fxShow.gt-sm>
             <mat-icon>restore</mat-icon>
         </button>
 
-        <button mat-icon-button [matMenuTriggerFor]="toolbarLangMenu" attr.aria-label="{{'languages.'+ currentLang | translate}}" matTooltip="{{'menu.language' | translate}}"
-            fxHide fxShow.gt-sm>
+        <button mat-icon-button [matMenuTriggerFor]="toolbarLangMenu" attr.aria-label="{{'languages.'+ currentLang | translate}}"
+            matTooltip="{{'menu.language' | translate}}" fxHide fxShow.gt-sm>
             <mat-icon svgIcon="gk:{{currentLang}}"></mat-icon>
         </button>
         <mat-menu #toolbarLangMenu="matMenu">
@@ -21,4 +24,29 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="false" align="start" mode="over">
+        <mat-nav-list>
+            <div fxLayout="column" fxLayoutAlign="space-around center">
+
+                <a mat-list-item (click)="resetGridster()" fxShow fxHide.gt-sm>
+                    <mat-icon>restore</mat-icon>
+                </a>
+
+                <a mat-list-item [matMenuTriggerFor]="langMenu" fxShow fxHide.gt-sm>
+                    <mat-icon svgIcon="gk:{{currentLang}}"></mat-icon>
+                </a>
+                <mat-menu #langMenu="matMenu">
+                    <button mat-icon-button (click)="changeLang('en')">
+                        <mat-icon svgIcon="gk:en"></mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="changeLang('cs')">
+                        <mat-icon svgIcon="gk:cs"></mat-icon>
+                    </button>
+                </mat-menu>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <router-outlet></router-outlet>
+</mat-sidenav-container>

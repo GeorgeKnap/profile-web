@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         gridType: 'fit',
         fixedColWidth: 100,
         fixedRowHeight: 100,
-        keepFixedHeightInMobile: false,
+        keepFixedHeightInMobile: true,
         compactType: 'none',
         minCols: 24,
         maxCols: 24,
@@ -59,14 +59,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
             {
                 card: Card.AboutMe,
                 cols: 11,
-                rows: 6,
+                rows: 5,
                 x: 1,
                 y: 0
             },
             {
                 card: Card.EmploymentHistory,
                 cols: 10,
-                rows: 4,
+                rows: 6,
                 x: 13,
                 y: 0
             }

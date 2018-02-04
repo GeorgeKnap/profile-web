@@ -6,11 +6,6 @@
 html, body, gk-root {
     margin: 0;
     height: 100%;
-    background-image: url("/assets/images/devices-color0.1.png");
-    background-size: 100%;
-    background-repeat: repeat-y;
-    background-attachment: fixed;
-    background-position: 0 -60px; 
 }
 
 
@@ -18,8 +13,12 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(255,255,255,0.54);
     font-family: 'Roboto', sans-serif;
+    background-image: url("/assets/images/devices-color0.1.png");
+    background-size: 100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: 0 -60px; 
 }
 
 h3 {

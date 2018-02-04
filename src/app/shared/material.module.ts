@@ -12,6 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
     imports: [
@@ -25,6 +26,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatListModule,
         MatMenuModule,
         MatProgressSpinnerModule,
+        MatSidenavModule,
         MatToolbarModule,
         MatTooltipModule
     ],
@@ -40,6 +42,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatInputModule,
         MatMenuModule,
         MatProgressSpinnerModule,
+        MatSidenavModule,
         MatToolbarModule,
         MatTooltipModule
     ]

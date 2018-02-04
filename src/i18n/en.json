@@ -21,5 +21,25 @@
         "technologies": "Core Technologies",
         "messenger": "Contact me at Facebook Messenger",
         "linkedin": "LinkedIn profile"
+    },
+    "employmentHistory":{
+        "freelancer":{
+            "range": "from 2017",
+            "company":"Progressive Web Apps freelancer",
+            "p1": "Have you heard about Progressive Web Apps? It's the standard for next generation hybrid apps that imitates the native mobile apps behavior without the need of downloading the app from the app store.",
+            "p2": "The PWA features basic offline capability and cross-platform compatibility. I have decent experience creating Progressive Web Apps using the cutting edge technologies like Angular framework, Angular Material, Firebase and RxJS. Feel free to contact me with any question and I will create the app your company needs."
+        },
+        "veropath":{
+            "range": "11/2014 - 12/2015",
+            "company":"Veropath"
+        },
+        "intens":{
+            "range": "from 01/2016",
+            "company":"INTENS Corporation"
+        },
+        "pscp":{
+            "range": "01/2010 - 09/2014",
+            "company":"Pension Fund of Česká Pojišťovna"
+        }
     }
 }
