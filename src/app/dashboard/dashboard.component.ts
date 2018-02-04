@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         maxRows: 50,
         outerMarginLeft: 12,
         outerMarginRight: 12,
-        displayGrid: 'always',
+        displayGrid: 'none',
         defaultItemCols: 10,
         defaultItemRows: 10,
         minItemCols: 1,

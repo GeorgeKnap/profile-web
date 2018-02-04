@@ -29,21 +29,17 @@
         <mat-nav-list>
             <div fxLayout="column" fxLayoutAlign="space-around center">
 
-                <a mat-list-item (click)="resetGridster()" fxShow fxHide.gt-sm>
-                    <mat-icon>restore</mat-icon>
-                </a>
-
-                <a mat-list-item [matMenuTriggerFor]="langMenu" fxShow fxHide.gt-sm>
-                    <mat-icon svgIcon="gk:{{currentLang}}"></mat-icon>
-                </a>
-                <mat-menu #langMenu="matMenu">
-                    <button mat-icon-button (click)="changeLang('en')">
-                        <mat-icon svgIcon="gk:en"></mat-icon>
-                    </button>
-                    <button mat-icon-button (click)="changeLang('cs')">
-                        <mat-icon svgIcon="gk:cs"></mat-icon>
-                    </button>
-                </mat-menu>
+            <a mat-list-item [matMenuTriggerFor]="langMenu" fxShow fxHide.gt-sm>
+                <span translate>languages.{{ currentLang }}</span>
+            </a>
+            <mat-menu #langMenu="matMenu">
+                <button mat-menu-item (click)="changeLang('en')">
+                    <span translate>languages.en</span>
+                </button>
+                <button mat-menu-item (click)="changeLang('cs')">
+                    <span translate>languages.cs</span>
+                </button>
+            </mat-menu>
             </div>
         </mat-nav-list>
     </mat-sidenav>
