@@ -9,21 +9,21 @@
         "title": "New app version available"
     },
     "shared": {
-    "failureMessage": "Oops! Something went wrong. Please try again later.",
-    "noResultsFound": "No data",
-    "cancel": "Cancel",
-    "save": "Save",
-    "yes": "Yes",
-    "no": "No",
-    "invalidInput": "Invalid",
-    "unauthorized": "Unauthorized. Not logged in or the session has expired.",
-    "loginFailed": "Invalid user name or password.",
-    "serverError": "Server error or connection to server lost.",
-    "commonConfirmationQuestion": "Are you sure to proceed?",
-    "position": "Position",
-    "clearForm": "Clear Form",
-    "unsavedChanges": "You have an unsaved changes. Do you reallu want to proceed?"
-  },
+        "failureMessage": "Oops! Something went wrong. Please try again later.",
+        "noResultsFound": "No data",
+        "cancel": "Cancel",
+        "save": "Save",
+        "yes": "Yes",
+        "no": "No",
+        "invalidInput": "Invalid",
+        "unauthorized": "Unauthorized. Not logged in or the session has expired.",
+        "loginFailed": "Invalid user name or password.",
+        "serverError": "Server error or connection to server lost.",
+        "commonConfirmationQuestion": "Are you sure to proceed?",
+        "position": "Position",
+        "clearForm": "Clear Form",
+        "unsavedChanges": "You have an unsaved changes. Do you reallu want to proceed?"
+    },
     "menu": {
         "resetGridster": "Restore Cards Positions",
         "language": "Select Language"
@@ -44,10 +44,11 @@
             "range": "from 2017",
             "company": "Progressive Web Apps freelancer",
             "p1": "Have you heard about Progressive Web Apps? It's the standard for next generation hybrid apps that imitates the native mobile apps behavior without the need of downloading the app from the app store.",
-            "p2": "The PWA features basic offline capability and cross-platform compatibility. I have decent experience creating Progressive Web Apps using the cutting edge technologies like Angular framework, Angular Material, Firebase, Redux and RxJS. Feel free to contact me with any question and I will create the app your company needs."
+            "p2": "The PWA features basic offline capability and cross-platform compatibility. I have decent experience creating Progressive Web Apps using the cutting edge technologies like Angular framework, Angular Material, Firebase, Redux and RxJS.",
+            "p3": "Feel free to contact me with any question and I will create the app your company needs."
         },
         "veropath": {
-            "range": "11/2014 - 12/2015",
+            "range": "2014 - 2015",
             "company": "Veropath",
             "locationKey": "Location",
             "locationValue": "Edinburg - UK",
@@ -57,7 +58,7 @@
             "skills": "Skills"
         },
         "intens": {
-            "range": "from 01/2016",
+            "range": "from 2016",
             "company": "INTENS Corporation",
             "locationKey": "Location",
             "locationValue": "Prague",
@@ -68,7 +69,7 @@
             "skills": "Skills"
         },
         "pscp": {
-            "range": "01/2010 - 09/2014",
+            "range": "2010 - 2014",
             "company": "Česká Pojišťovna Pension Fund",
             "locationKey": "Location",
             "locationValue": "Prague",
