@@ -27,19 +27,39 @@
             "range": "2017 - dosud",
             "company": "Freelancer pro vývoj Progressive Web Apps",
             "p1": "Znáte pojem Progressive Web Apps? Jedná se o standard pro hybridní webové aplikace, které imitují chování nativních mobilních apliakcí a lze je na mobilní zařízení nainstalovat, podobně jako aplikace z app store.",
-            "p2": "Progressive Web Apps disponují základní schopností práce v offline režimu a jsou multiplatformní. Mám rozsáhlé zkušenosti v oblasti vývoje Progressive Web Apps v cutting edge technologiích jako je platforma Angular, RxJS, Angular Material, Firebase a Ag-Grid. Neváhejte mě kontaktovat a vytvořím pro Vaši společnosti aplikaci, kterou potřebujete."
+            "p2": "Progressive Web Apps disponují základní schopností práce v offline režimu a jsou multiplatformní. Mám rozsáhlé zkušenosti v oblasti vývoje Progressive Web Apps v cutting edge technologiích jako je platforma Angular, RxJS, Angular Material, Firebase a Ag-Grid. Neváhejte mě kontaktovat a vytvořím pro Vaši společnost aplikaci, kterou potřebujete."
         },
         "veropath": {
             "range": "listopad 2014 - prosinec 2015",
-            "company": "Veropath"
+            "company": "Veropath",
+            "locationKey": "Místo",
+            "locationValue": "Edinburg - UK",
+            "positionKey": "Pozice",
+            "positionValue": "AngularJS Developer",
+            "p1": "Ve společnosti Veropath jsem byl součástí týmu vývoje webového systému pro analýzu telefonních nákladů.",
+            "skills":"Dovednosti"
         },
         "intens": {
             "range": "od leden 2016",
-            "company": "INTENS Corporation"
+            "company": "INTENS Corporation",
+            "locationKey": "Místo",
+            "locationValue": "Praha",
+            "positionKey": "Pozice",
+            "positionValue": "Angular platform Lead Developer & Technical Lead",
+            "p1": "V INTENS Corporation jsem zodpovědný za frontend vývoj webových aplikací na platformě Angular a starším AngularJS. Má role je Technical Lead - jsem zodpovědný za návrh použitých technologií a architekturu aplikací. Tyto webové aplikace komunikují prostřednictvím ServiceStack API s .NET servery. Pro realtime zobrazení dat využívám technologii Server-Sent Events. Jsem také zodpovědný za zaškolení junior kolegů",
+            "p2": "Aplikace spadají do oblasti dopravní telematiky a GIS systémů  (Geographic Information Systems).",
+            "skills":"Dovednosti"
         },
         "pscp": {
             "range": "leden 2010 - září 2014",
-            "company": "Penzijní společnost České Pojišťovny"
+            "company": "Penzijní společnost České Pojišťovny",
+            "locationKey": "Místo",
+            "locationValue": "Praha",
+            "positionKey": "Pozice",
+            "positionValue": "T-SQL developer, později C# Developer",
+            "p1": "V PSČP jsem zastával roli programátora interní aplikace pro správu penzijních účtů. Do roku 2013 jsem převážně psal T-SQL procedury a vyvíjel systém v prostředí PowerBuilder.",
+            "p2": "Od roku 2013 jsem se zapojil do vývoje nového penzijního systému v C#/.NET 4.5",
+            "skills":"Dovednosti"
         }
     }
 }

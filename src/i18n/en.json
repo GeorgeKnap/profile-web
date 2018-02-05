@@ -22,24 +22,44 @@
         "messenger": "Contact me at Facebook Messenger",
         "linkedin": "LinkedIn profile"
     },
-    "employmentHistory":{
-        "freelancer":{
+    "employmentHistory": {
+        "freelancer": {
             "range": "from 2017",
-            "company":"Progressive Web Apps freelancer",
+            "company": "Progressive Web Apps freelancer",
             "p1": "Have you heard about Progressive Web Apps? It's the standard for next generation hybrid apps that imitates the native mobile apps behavior without the need of downloading the app from the app store.",
             "p2": "The PWA features basic offline capability and cross-platform compatibility. I have decent experience creating Progressive Web Apps using the cutting edge technologies like Angular framework, Angular Material, Firebase and RxJS. Feel free to contact me with any question and I will create the app your company needs."
         },
-        "veropath":{
+        "veropath": {
             "range": "11/2014 - 12/2015",
-            "company":"Veropath"
+            "company": "Veropath",
+            "locationKey": "Location",
+            "locationValue": "Edinburg - UK",
+            "positionKey": "Position",
+            "positionValue": "AngularJS Developer",
+            "p1": "I was part of the team responsible for development of Telecoms Expense Management Web App.",
+            "skills": "Skills"
         },
-        "intens":{
+        "intens": {
             "range": "from 01/2016",
-            "company":"INTENS Corporation"
+            "company": "INTENS Corporation",
+            "locationKey": "Location",
+            "locationValue": "Prague",
+            "positionKey": "Position",
+            "positionValue": "Angular platform Lead Developer & Technical Lead",
+            "p1": "At INTENS Corporation I've been responsible for creating Angular & AngularJS Web Apps. My role is technical lead, I design the app's architecture and I decide the technologies to use at front-end side. My apps communicate via ServiceStack API with .NET servers. Server-Sent Events technology used for realtime data pushing. I've also been mentoring junior colleagues.",
+            "p2": "Our products focus on transport telematics and GIS (Geographic Information Systems)",
+            "skills": "Skills"
         },
-        "pscp":{
+        "pscp": {
             "range": "01/2010 - 09/2014",
-            "company":"Pension Fund of Česká Pojišťovna"
+            "company": "Česká Pojišťovna Pension Fund",
+            "locationKey": "Location",
+            "locationValue": "Prague",
+            "positionKey": "Position",
+            "positionValue": "T-SQL developer, později C# Developer",
+            "p1": "At Pension Fund I was a developer of an application responsible for managing pension accounts. Between 2010-2013 I was creating T-SQL stored porcedures and application layer in PowerBuilder.",
+            "p2": "From 2013 I joined a team to create new pension management system using C#/.NET 4.5",
+            "skills": "Skills"
         }
     }
 }
