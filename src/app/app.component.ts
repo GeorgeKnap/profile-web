@@ -26,7 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.translateService.setDefaultLang('cs');
 
     const storageLang = this.storageService.getLocalItem('gk.personal-web.lang');
-    this.translateService.use(storageLang ? storageLang : 'cs');
+    this.translateService.use(storageLang ? storageLang : 'en');
 
     this.translateService.get('appHeader').subscribe((title) => {
       this.titleService.setTitle(title);
