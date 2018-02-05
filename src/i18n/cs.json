@@ -8,6 +8,22 @@
         "question": "K dispozici je nová verze aplikace. Aktualizace může chvíli trvat a bude následována znovunačtením okna prohlížeče. Chcete nyní aktualizaci provést?",
         "title": "Nová verze aplikace"
     },
+    "shared": {
+        "failureMessage": "Oops! Operace neočekávaně selhala.",
+        "noResultsFound": "Žádná data",
+        "cancel": "Zrušit změny",
+        "save": "Uložit",
+        "yes": "Ano",
+        "no": "Ne",
+        "invalidInput": "nevalidní pole",
+        "unauthorized": "Uživatel není přihlášen nebo vypršela platnost přihlášení.",
+        "loginFailed": "Neplatné uživatelské jméno nebo heslo.",
+        "serverError": "Chyba serveru nebo server není dostupný.",
+        "commonConfirmationQuestion": "Jste si jisti, že chcete tuto akci provést?",
+        "position": "Poloha",
+        "clearForm": "Vyčistit formulář",
+        "unsavedChanges": "Máte neuložené změny. Opravdu zrušit?"
+    },
     "menu": {
         "resetGridster": "Obnovit polohu karet",
         "language": "Zvolte jazyk"

@@ -8,6 +8,22 @@
         "question": "A new version is available. Required files will be downloaded which may take a moment. Page reload will follow when update is done. Would you like to update now?",
         "title": "New app version available"
     },
+    "shared": {
+    "failureMessage": "Oops! Something went wrong. Please try again later.",
+    "noResultsFound": "No data",
+    "cancel": "Cancel",
+    "save": "Save",
+    "yes": "Yes",
+    "no": "No",
+    "invalidInput": "Invalid",
+    "unauthorized": "Unauthorized. Not logged in or the session has expired.",
+    "loginFailed": "Invalid user name or password.",
+    "serverError": "Server error or connection to server lost.",
+    "commonConfirmationQuestion": "Are you sure to proceed?",
+    "position": "Position",
+    "clearForm": "Clear Form",
+    "unsavedChanges": "You have an unsaved changes. Do you reallu want to proceed?"
+  },
     "menu": {
         "resetGridster": "Restore Cards Positions",
         "language": "Select Language"
