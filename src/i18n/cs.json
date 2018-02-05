@@ -23,6 +23,7 @@
         "linkedin": "LinkedIn profil"
     },
     "employmentHistory": {
+        "title": "Přehled pracovních zkušeností",
         "freelancer": {
             "range": "2017 - dosud",
             "company": "Freelancer pro vývoj Progressive Web Apps",
@@ -37,7 +38,7 @@
             "positionKey": "Pozice",
             "positionValue": "AngularJS Developer",
             "p1": "Ve společnosti Veropath jsem byl součástí týmu vývoje webového systému pro analýzu telefonních nákladů.",
-            "skills":"Dovednosti"
+            "skills": "Dovednosti"
         },
         "intens": {
             "range": "od leden 2016",
@@ -48,7 +49,7 @@
             "positionValue": "Angular platform Lead Developer & Technical Lead",
             "p1": "V INTENS Corporation jsem zodpovědný za frontend vývoj webových aplikací na platformě Angular a starším AngularJS. Má role je Technical Lead - jsem zodpovědný za návrh použitých technologií a architekturu aplikací. Tyto webové aplikace komunikují prostřednictvím ServiceStack API s .NET servery. Pro realtime zobrazení dat využívám technologii Server-Sent Events. Jsem také zodpovědný za zaškolení junior kolegů",
             "p2": "Aplikace spadají do oblasti dopravní telematiky a GIS systémů  (Geographic Information Systems).",
-            "skills":"Dovednosti"
+            "skills": "Dovednosti"
         },
         "pscp": {
             "range": "leden 2010 - září 2014",
@@ -59,7 +60,7 @@
             "positionValue": "T-SQL developer, později C# Developer",
             "p1": "V PSČP jsem zastával roli programátora interní aplikace pro správu penzijních účtů. Do roku 2013 jsem převážně psal T-SQL procedury a vyvíjel systém v prostředí PowerBuilder.",
             "p2": "Od roku 2013 jsem se zapojil do vývoje nového penzijního systému v C#/.NET 4.5",
-            "skills":"Dovednosti"
+            "skills": "Dovednosti"
         }
     }
 }

@@ -23,6 +23,7 @@
         "linkedin": "LinkedIn profile"
     },
     "employmentHistory": {
+        "title": "Employment History",
         "freelancer": {
             "range": "from 2017",
             "company": "Progressive Web Apps freelancer",
