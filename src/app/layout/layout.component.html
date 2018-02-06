@@ -9,7 +9,7 @@
             <mat-icon>restore</mat-icon>
         </button>
 
-        <mat-button-toggle-group (change)="changeLang($event.value)">
+        <mat-button-toggle-group (change)="changeLang($event.value)" fxHide fxShow.gt-sm>
             <mat-button-toggle value="en" [checked]="currentLang === 'en'">
                 <mat-icon svgIcon="gk:en"></mat-icon>
             </mat-button-toggle>
