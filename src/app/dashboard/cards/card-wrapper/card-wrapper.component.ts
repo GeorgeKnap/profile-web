@@ -7,6 +7,7 @@ import { GridItem } from '../../models/grid-item.model';
     <ng-container [ngSwitch]="gridItem.card">
     <gk-about-me *ngSwitchCase="'AboutMe'"></gk-about-me>
     <gk-employment-history *ngSwitchCase="'EmploymentHistory'"></gk-employment-history>
+    <gk-education *ngSwitchCase="'Education'"></gk-education>
     <ng-container *ngSwitchDetault></ng-container>
     </ng-container>`
 })

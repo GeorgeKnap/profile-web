@@ -79,5 +79,13 @@
             "p2": "Od roku 2013 jsem se zapojil do vývoje nového penzijního systému v C#/.NET 4.5",
             "skills": "Dovednosti"
         }
+    },
+    "education": {
+        "title": "Vzdělání",
+        "name": "2006 - 2010 Bakalářský titul v programu Aplikovaná informatika",
+        "university": "Vysoká škola ekonomická v Praze",
+        "award": "Bakalářský titul",
+        "p1": "Na Fakultě informatiky a statistiky jsem získal základní znalosti objektově orientovaného programování. Jako specializaci jsem si zvolil databáze. Splnil jsem kurzy SQL/T-SQL, architektury relačních databázových systémů, návrhy databází a správu databáze Oracle.",
+        "p2": "V posledním ročníku jsem absolvoval předměty vývoje webových stránek. Bakalářkou práci na téma \"Implemetace Platební brány PayPal v internetovém obchodě\" jsem složil a obhájil v roce 2010."
     }
 }

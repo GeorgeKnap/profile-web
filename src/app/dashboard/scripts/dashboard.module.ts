@@ -6,6 +6,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { AboutMeComponent } from '../cards/about-me/about-me.component';
 import { CardWrapperComponent } from '../cards/card-wrapper/card-wrapper.component';
 import { EmploymentHistoryComponent } from '../cards/employment-history/employment-history.component';
+import { EducationComponent } from '../cards/education/education.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { EmploymentHistoryComponent } from '../cards/employment-history/employme
         DashboardComponent,
         AboutMeComponent,
         CardWrapperComponent,
-        EmploymentHistoryComponent
+        EmploymentHistoryComponent,
+        EducationComponent
     ],
     providers: [],
 })

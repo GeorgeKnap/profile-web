@@ -69,6 +69,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 rows: 11,
                 x: 13,
                 y: 0
+            },
+            {
+                card: Card.Education,
+                cols: 11,
+                rows: 6,
+                x: 1,
+                y: 6
             }
         ];
     }
