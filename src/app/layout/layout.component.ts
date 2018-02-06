@@ -15,7 +15,7 @@ import { ResetGridsterService } from '../shared/services/reset-gridster.service'
 })
 export class LayoutComponent implements OnInit, OnDestroy {
 
-    currentLang: string;
+    langOption: string;
 
     private ngUnsubscribe: Subject<any> = new Subject();
 
@@ -25,17 +25,17 @@ export class LayoutComponent implements OnInit, OnDestroy {
         private readonly titleService: Title,
         private readonly resetGridsterService: ResetGridsterService
     ) {
-        this.currentLang = this.translateService.currentLang;
+        this.langOption = this.translateService.currentLang === 'cs' ? 'en' : 'cs';
         this.translateService.onLangChange.takeUntil(this.ngUnsubscribe).subscribe((evt: LangChangeEvent) => {
-            this.currentLang = evt.lang;
+            this.langOption = evt.lang === 'cs' ? 'en' : 'cs';
             this.storageService.setLocalItem('gk.personal-web.lang', evt.lang);
             this.titleService.setTitle(this.translateService.instant('appHeader'));
         });
     }
 
 
-    changeLang(lang: string) {
-        this.translateService.use(lang);
+    toggleLang() {
+        this.translateService.use(this.translateService.currentLang === 'cs' ? 'en' : 'cs');
     }
 
     resetGridster() {
