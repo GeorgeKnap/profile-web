@@ -9,14 +9,12 @@
             <mat-icon>restore</mat-icon>
         </button>
 
-        <mat-button-toggle-group (change)="changeLang($event.value)" fxHide fxShow.gt-sm>
-            <mat-button-toggle value="en" [checked]="currentLang === 'en'">
+            <button mat-icon-button value="en" [ngClass]="{'lang-checked': currentLang === 'en'}" (click)="changeLang('en')" matTooltip="{{'languages.en' | translate}}">
                 <mat-icon svgIcon="gk:en"></mat-icon>
-            </mat-button-toggle>
-            <mat-button-toggle value="cs" [checked]="currentLang === 'cs'">
+            </button>
+            <button  mat-icon-button value="cs" [ngClass]="{'lang-checked': currentLang === 'cs'}" (click)="changeLang('cs')" matTooltip="{{'languages.cs' | translate}}">
                 <mat-icon svgIcon="gk:cs"></mat-icon>
-            </mat-button-toggle>
-        </mat-button-toggle-group>
+            </button>
     </mat-toolbar-row>
 </mat-toolbar>
 

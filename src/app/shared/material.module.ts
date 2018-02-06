@@ -13,12 +13,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
     imports: [
         MatButtonModule,
-        MatButtonToggleModule,
         MatCardModule,
         MatChipsModule,
         MatDialogModule,
@@ -35,7 +33,6 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     declarations: [],
     exports: [
         MatButtonModule,
-        MatButtonToggleModule,
         MatCardModule,
         MatChipsModule,
         MatDialogModule,
