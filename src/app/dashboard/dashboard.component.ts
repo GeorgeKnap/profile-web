@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         maxItemRows: 50,
         itemChangeCallback: (newPosition: GridItem) => {
             console.log('grid item event: ', newPosition);
-            this.storageService.setLocalItem('gk.personal-web.gridsterSettings', JSON.stringify(this.gridItems));
+            this.storageService.setSessionItem('gk.personal-web.gridsterSettings', JSON.stringify(this.gridItems));
         },
         draggable: {
             enabled: true,
@@ -86,7 +86,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit() {
-        let storageGridster = this.storageService.getLocalItem('gk.personal-web.gridsterSettings');
+        let storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
         if (storageGridster) {
             this.gridItems = JSON.parse(storageGridster);
         } else {
@@ -95,7 +95,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
         this.resetGridsterService.resetGridster$.takeUntil(this.ngUnsubscribe).subscribe(() => {
             this.gridItems = [...this.defaultGridItems];
-            this.storageService.setLocalItem('gk.personal-web.gridsterSettings', JSON.stringify(this.defaultGridItems));
+            this.storageService.setSessionItem('gk.personal-web.gridsterSettings', JSON.stringify(this.defaultGridItems));
         });
     }
 
