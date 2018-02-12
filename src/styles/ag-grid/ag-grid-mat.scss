@@ -1,0 +1,23 @@
+@import '../material/intens-theme.scss';
+
+// adjust the icons path
+$ag-mat-icons-path: '../../node_modules/ag-grid/src/styles/material-icons/';
+$ag-icons-path: '../../node_modules/ag-grid/src/styles/icons/';
+
+
+// set the colors to the ones from the material theme
+$ag-mat-primary: mat-color($primary);
+$ag-mat-accent: mat-color($accent);
+
+.ag-theme-material {
+    background-color: white;
+
+    .ag-cell {
+        line-height: 42px;
+    }
+
+
+    mat-icon{
+        font-size:22px;
+    }
+}

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AgGridModule } from 'ag-grid-angular/main';
 
 import { DashboardComponent } from '../dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -7,11 +8,13 @@ import { AboutMeComponent } from '../cards/about-me/about-me.component';
 import { CardWrapperComponent } from '../cards/card-wrapper/card-wrapper.component';
 import { EmploymentHistoryComponent } from '../cards/employment-history/employment-history.component';
 import { EducationComponent } from '../cards/education/education.component';
+import { RealtimeAppComponent } from '../cards/realtime-app/realtime-app.component';
 
 @NgModule({
     imports: [
         SharedModule,
-        DashboardRoutingModule
+        DashboardRoutingModule,
+        AgGridModule
     ],
     exports: [],
     declarations: [
@@ -19,7 +22,8 @@ import { EducationComponent } from '../cards/education/education.component';
         AboutMeComponent,
         CardWrapperComponent,
         EmploymentHistoryComponent,
-        EducationComponent
+        EducationComponent,
+        RealtimeAppComponent
     ],
     providers: [],
 })

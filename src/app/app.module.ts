@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ParallaxModule } from 'ngx-parallax';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { MaterialModule } from './shared/material.module';
 import { CoreModule } from './core.module';
@@ -36,6 +38,8 @@ export function httpLoaderFactory(http: HttpClient) {
             }
         }),
         ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+        AngularFireModule.initializeApp(environment.firebase, 'george-knap'),
+        AngularFirestoreModule,
         MaterialModule,
         AppRoutingModule,
         CoreModule,

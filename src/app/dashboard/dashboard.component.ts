@@ -76,6 +76,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 rows: 6,
                 x: 1,
                 y: 6
+            },
+            {
+                card: Card.ReltimeApp,
+                cols: 11,
+                rows: 6,
+                x: 1,
+                y: 12
             }
         ];
     }

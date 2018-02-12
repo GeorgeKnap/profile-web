@@ -20,7 +20,9 @@
         "serviceWorker": true,
         "styles": [
             "styles/app.scss",
-            "../node_modules/material-design-icons/iconfont/material-icons.css"
+            "../node_modules/material-design-icons/iconfont/material-icons.css",
+            "../node_modules/ag-grid/src/styles/ag-grid.scss",
+            "../node_modules/ag-grid/src/styles/ag-theme-material.scss"
           ],
         "scripts": [
             "../node_modules/jquery/dist/jquery.slim.js",
