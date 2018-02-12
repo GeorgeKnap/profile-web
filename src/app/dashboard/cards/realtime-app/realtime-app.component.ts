@@ -2,10 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GridOptions, ColDef } from 'ag-grid/main';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
+import { AngularFirestore } from 'angularfire2/firestore';
 import { TranslateService } from '@ngx-translate/core';
+
 import { HelperService } from '../../../shared/services/helper.service';
 import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-overlay.component';
 import { AgGridLoadingOverlay } from '../../../shared/components/ag-grid-loading-overlay.component';
+import { Groceries } from './models/groceries.model';
 
 @Component({
   selector: 'gk-realtime-app',
@@ -20,7 +23,8 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly translateService: TranslateService,
-    private readonly helperService: HelperService
+    private readonly helperService: HelperService,
+    private readonly db: AngularFirestore
   ) {
     //
   }
@@ -29,13 +33,13 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
     this.gridOptions = {
       columnDefs: [
         {
-          field: 'product',
+          field: 'name',
           filter: 'agSetColumnFilter',
           headerName: this.translateService.instant('realtimeApp.headers.product'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.product'),
         },
         {
-          field: 'prize',
+          field: 'price',
           filter: 'agNumberColumnFilter',
           headerName: this.translateService.instant('realtimeApp.headers.price'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.price'),
@@ -71,7 +75,13 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       noRowsOverlayComponentFramework: AgGridNoRowsOverlay,
       loadingOverlayComponentFramework: AgGridLoadingOverlay,
       onGridReady: () => {
-        //
+        this.db.collection('groceries')
+          .valueChanges()
+          .takeUntil(this.ngUnsubscribe)
+          .subscribe((data: Array<Groceries>) => {
+            this.gridOptions.api!.setRowData(data);
+            this.gridOptions.api!.sizeColumnsToFit();
+          });
       }
     };
 
