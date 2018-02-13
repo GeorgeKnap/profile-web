@@ -156,8 +156,8 @@
     },
     "realtimeApp": {
         "header": "Real-time data",
-        "title": "Ag-Grid & Google Cloud Firestore",
-        "subtitle": "Spoutejte sílu real-time aplikací pro úspěšný business",
+        "title": "Ag-Grid & Firebase",
+        "subtitle": "Spoutejte sílu real-time aplikací pro úspěšný business. V tomto příkladu vidíte, jak data přicházejí v reálném čase bez nutnosti načtení stránky.",
         "headers": {
             "code": "Kód",
             "name": "Název",

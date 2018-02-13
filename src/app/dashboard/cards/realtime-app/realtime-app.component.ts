@@ -93,7 +93,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       localeTextFunc: (key, defaultValue) => this.helperService.agGridLang(key, defaultValue),
       noRowsOverlayComponentFramework: AgGridNoRowsOverlay,
       loadingOverlayComponentFramework: AgGridLoadingOverlay,
-      onGridReady: async () => {
+      onGridReady: () => {
         this.translateService.onLangChange.takeUntil(this.ngUnsubscribe).subscribe((lang) => {
           this.gridOptions.api!.refreshHeader();
         });
@@ -107,6 +107,8 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
           } else {
             this.gridOptions.api!.updateRowData({ update: data });
           }
+          this.gridOptions.api!.sizeColumnsToFit();
+          this.helperService.resizeGridHeight(data.length, 'realtimeGrid');
         });
 
       }

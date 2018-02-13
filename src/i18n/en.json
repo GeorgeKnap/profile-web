@@ -90,8 +90,8 @@
     },
     "realtimeApp": {
         "header": "Real-time Web Apps",
-        "title": "Powered by Ag-Grid & Google Cloud Firestore",
-        "subtitle": "Tame the power of real-time data for successful business",
+        "title": "Powered by Ag-Grid & Firebase",
+        "subtitle": "Tame the power of real-time data for successful business. See the data flowing into your application without the need of page refresh.",
         "headers": {
             "code": "Code",
             "name": "Name",

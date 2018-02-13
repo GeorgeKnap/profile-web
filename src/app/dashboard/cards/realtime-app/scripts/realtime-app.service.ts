@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { SampleData } from '../models/sample-data.model';
-import { DocumentReference } from '@firebase/firestore-types';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class RealtimeAppService {
 
     constructor(
-        private readonly db: AngularFirestore
+        private readonly db: AngularFireDatabase
     ) { }
 
     getSampleData() {
-        return this.db.collection<SampleData>('sample-data', ref => ref.limit(100)).snapshotChanges()
+        return this.db.list<SampleData>('sample-data', ref => ref.limitToFirst(200)).snapshotChanges()
             .map(actions => {
                 return actions.map(action => {
-                    const data = action.payload.doc.data() as SampleData;
-                    const id = action.payload.doc.id;
+                    const data = action.payload.val();
+                    const id = action.payload.key;
                     return { id, ...data } as SampleData;
                 });
             })
@@ -26,13 +25,11 @@ export class RealtimeAppService {
     }
 
     createData() {
-        let promises: Array<Promise<DocumentReference>> = new Array();
-        const collection = this.db.collection('sample-data');
+        const listRef = this.db.list('sample-data');
         for (const row of this.data()) {
             console.log('adding row: ', row);
-            promises.push(collection.add(row));
+            listRef.push(row);
         }
-        return promises;
     }
 
     private backFillData(data: Array<SampleData>): Array<SampleData> {

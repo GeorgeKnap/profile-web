@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         maxRows: 60,
         outerMarginLeft: 12,
         outerMarginRight: 12,
-        displayGrid: 'always',
+        displayGrid: 'none',
         defaultItemCols: 10,
         defaultItemRows: 10,
         minItemCols: 1,
@@ -77,8 +77,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
             },
             {
                 card: Card.ReltimeApp,
-                cols: 16,
-                rows: 6,
+                cols: 24,
+                rows: 10,
                 x: 0,
                 y: 11
             }
