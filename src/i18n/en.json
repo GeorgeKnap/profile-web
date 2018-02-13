@@ -93,9 +93,12 @@
         "title": "Powered by Ag-Grid & Google Cloud Firestore",
         "subtitle": "Tame the power of real-time data for successful business",
         "headers": {
-            "product": "Product",
-            "price": "Price",
-            "stock": "Stock"
+            "code": "Code",
+            "name": "Name",
+            "bid": "Bid",
+            "mid":"Mid",
+            "ask":"Ask",
+            "volume":"Volume"
         }
     }
 }

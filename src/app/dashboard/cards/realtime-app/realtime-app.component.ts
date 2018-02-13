@@ -2,13 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GridOptions, ColDef } from 'ag-grid/main';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
-import { AngularFirestore } from 'angularfire2/firestore';
+
 import { TranslateService } from '@ngx-translate/core';
 
 import { HelperService } from '../../../shared/services/helper.service';
 import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-overlay.component';
 import { AgGridLoadingOverlay } from '../../../shared/components/ag-grid-loading-overlay.component';
-import { Groceries } from './models/groceries.model';
+import { RealtimeAppService } from './scripts/realtime-app.service';
 
 @Component({
   selector: 'gk-realtime-app',
@@ -24,7 +24,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
   constructor(
     private readonly translateService: TranslateService,
     private readonly helperService: HelperService,
-    private readonly db: AngularFirestore
+    private readonly realtimeAppService: RealtimeAppService
   ) {
     //
   }
@@ -33,22 +33,41 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
     this.gridOptions = {
       columnDefs: [
         {
-          field: 'name',
+          field: 'code',
           filter: 'agSetColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.product'),
-          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.product'),
+          headerName: this.translateService.instant('realtimeApp.headers.code'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.code')
         },
         {
-          field: 'price',
-          filter: 'agNumberColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.price'),
-          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.price'),
+          field: 'name',
+          filter: 'agTextColumnFilter',
+          headerName: this.translateService.instant('realtimeApp.headers.name'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.name'),
+          width: 300
         },
         {
-          field: 'stock',
+          field: 'bid',
           filter: 'agNumberColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.stock'),
-          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.stock'),
+          headerName: this.translateService.instant('realtimeApp.headers.bid'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.bid'),
+        },
+        {
+          field: 'mid',
+          filter: 'agNumberColumnFilter',
+          headerName: this.translateService.instant('realtimeApp.headers.mid'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.mid'),
+        },
+        {
+          field: 'ask',
+          filter: 'agNumberColumnFilter',
+          headerName: this.translateService.instant('realtimeApp.headers.mid'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.mid'),
+        },
+        {
+          field: 'ask',
+          filter: 'agNumberColumnFilter',
+          headerName: this.translateService.instant('realtimeApp.headers.ask'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.ask'),
         },
       ] as Array<ColDef>,
       rowData: undefined,
@@ -74,18 +93,22 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       localeTextFunc: (key, defaultValue) => this.helperService.agGridLang(key, defaultValue),
       noRowsOverlayComponentFramework: AgGridNoRowsOverlay,
       loadingOverlayComponentFramework: AgGridLoadingOverlay,
-      onGridReady: () => {
+      onGridReady: async () => {
         this.translateService.onLangChange.takeUntil(this.ngUnsubscribe).subscribe((lang) => {
           this.gridOptions.api!.refreshHeader();
         });
 
-        this.db.collection('groceries')
-          .valueChanges()
-          .takeUntil(this.ngUnsubscribe)
-          .subscribe((data: Array<Groceries>) => {
+        this.realtimeAppService.getSampleData().subscribe((data) => {
+          if (!this.gridOptions.api) {
+            return;
+          }
+          if (this.gridOptions.rowData === undefined) {
             this.gridOptions.api!.setRowData(data);
-            this.gridOptions.api!.sizeColumnsToFit();
-          });
+          } else {
+            this.gridOptions.api!.updateRowData({ update: data });
+          }
+        });
+
       }
     };
 

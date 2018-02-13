@@ -5,7 +5,7 @@ import { ILoadingOverlayAngularComp } from 'ag-grid-angular';
         selector: 'intens-ag-grid-loading-overlay',
         template:`
 <div fxLayout="row" fxLayoutAlign="center center">
-    <mat-spinner [diameter]="32" [strokeWidth]="2"></mat-spinner>
+    <mat-spinner [diameter]="32" [strokeWidth]="2" color="accent"></mat-spinner>
 </div>
 `
     })

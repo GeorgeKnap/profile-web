@@ -9,6 +9,7 @@ import { CardWrapperComponent } from '../cards/card-wrapper/card-wrapper.compone
 import { EmploymentHistoryComponent } from '../cards/employment-history/employment-history.component';
 import { EducationComponent } from '../cards/education/education.component';
 import { RealtimeAppComponent } from '../cards/realtime-app/realtime-app.component';
+import { RealtimeAppService } from '../cards/realtime-app/scripts/realtime-app.service';
 
 @NgModule({
     imports: [
@@ -25,6 +26,8 @@ import { RealtimeAppComponent } from '../cards/realtime-app/realtime-app.compone
         EducationComponent,
         RealtimeAppComponent
     ],
-    providers: [],
+    providers: [
+        RealtimeAppService
+    ],
 })
 export class DashboardModule { }

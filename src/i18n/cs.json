@@ -159,9 +159,12 @@
         "title": "Ag-Grid & Google Cloud Firestore",
         "subtitle": "Spoutejte sílu real-time aplikací pro úspěšný business",
         "headers": {
-            "product": "Produkt",
-            "price": "Cena",
-            "stock": "Množství"
+            "code": "Kód",
+            "name": "Název",
+            "bid": "Koupě",
+            "mid":"Kurz",
+            "ask":"Prodej",
+            "volume":"Objem"
         }
     }
 }

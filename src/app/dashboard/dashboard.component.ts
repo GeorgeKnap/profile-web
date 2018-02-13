@@ -19,21 +19,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
     gridItems!: Array<GridItem>;
     gridsterOptions: GridsterConfig = {
         gridType: 'fit',
-        fixedColWidth: 100,
-        fixedRowHeight: 100,
         keepFixedHeightInMobile: true,
         compactType: 'none',
         minCols: 24,
         maxCols: 24,
         minRows: 24,
-        maxRows: 50,
+        maxRows: 60,
         outerMarginLeft: 12,
         outerMarginRight: 12,
-        displayGrid: 'none',
+        displayGrid: 'always',
         defaultItemCols: 10,
         defaultItemRows: 10,
         minItemCols: 1,
-        maxItemCols: 12,
+        maxItemCols: 24,
         minItemRows: 1,
         maxItemRows: 50,
         itemChangeCallback: (newPosition: GridItem) => {
@@ -60,29 +58,29 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 card: Card.AboutMe,
                 cols: 11,
                 rows: 6,
-                x: 1,
+                x: 0,
                 y: 0
             },
             {
                 card: Card.EmploymentHistory,
-                cols: 10,
-                rows: 11,
-                x: 13,
+                cols: 13,
+                rows: 9,
+                x: 11,
                 y: 0
             },
             {
                 card: Card.Education,
                 cols: 11,
-                rows: 6,
-                x: 1,
+                rows: 5,
+                x: 0,
                 y: 6
             },
             {
                 card: Card.ReltimeApp,
-                cols: 11,
+                cols: 16,
                 rows: 6,
-                x: 1,
-                y: 12
+                x: 0,
+                y: 11
             }
         ];
     }
