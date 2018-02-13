@@ -10,6 +10,7 @@ import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-
 import { AgGridLoadingOverlay } from '../../../shared/components/ag-grid-loading-overlay.component';
 import { RealtimeAppService } from './scripts/realtime-app.service';
 import { SampleData } from './models/sample-data.model';
+import { Observable } from '@firebase/util';
 
 @Component({
   selector: 'gk-realtime-app',
@@ -118,6 +119,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
           }
           if (this.gridOptions.rowData === undefined) {
             this.gridOptions.api!.setRowData(data);
+            this.realtimeAppService.rowUpdates(data);
           } else {
             this.gridOptions.api!.updateRowData({ update: data });
           }

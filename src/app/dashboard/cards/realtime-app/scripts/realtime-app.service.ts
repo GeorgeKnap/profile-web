@@ -2,16 +2,27 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { SampleData } from '../models/sample-data.model';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/interval';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class RealtimeAppService {
 
+private sampleDataRef: AngularFireList<SampleData>;
+
     constructor(
-        private readonly db: AngularFireDatabase
+        private readonly af: AngularFireDatabase
     ) { }
 
+    rowUpdates(data: Array<SampleData>) {
+        Observable.interval(1000).subscribe(() => {
+            this.makeSomePriceChanges(data);
+            this.makeSomeVolumeChanges(data);
+        });
+    }
+
     getSampleData() {
-        return this.db.list<SampleData>('sample-data', ref => ref.limitToFirst(200)).snapshotChanges()
+        return this.af.list<SampleData>('sample-data', ref => ref.limitToFirst(200)).snapshotChanges()
             .map(actions => {
                 return actions.map(action => {
                     const data = action.payload.val();
@@ -25,10 +36,10 @@ export class RealtimeAppService {
     }
 
     createData() {
-        const listRef = this.db.list('sample-data');
+        this.sampleDataRef = this.af.list('sample-data');
         for (const row of this.data()) {
             console.log('adding row: ', row);
-            listRef.push(row);
+            this.sampleDataRef.push(row);
         }
     }
 
@@ -44,6 +55,37 @@ export class RealtimeAppService {
 
             return sampleData;
         });
+    }
+
+    private makeSomeVolumeChanges(data) {
+        for (let i = 0; i < 10; i++) {
+            // pick a data item at random
+            const index = Math.floor(data.length * Math.random());
+
+            const currentRowData = data[index];
+
+            // change by a value between -5 and 5
+            const move = (Math.floor(10 * Math.random())) - 5;
+            const newValue = currentRowData.volume + move;
+            currentRowData.volume = newValue;
+            //this.sampleDataRef.update();
+        }
+    }
+
+    private makeSomePriceChanges(data) {
+        // randomly update data for some rows
+        for (let i = 0; i < 10; i++) {
+            const index = Math.floor(data.length * Math.random());
+
+            const currentRowData = data[index];
+
+            // change by a value between -1 and 2 with one decimal place
+            const move = (Math.floor(30 * Math.random())) / 10 - 1;
+            const newValue = currentRowData.mid + move;
+            currentRowData.mid = newValue;
+
+            this.setBidAndAsk(currentRowData);
+        }
     }
 
     private setBidAndAsk(sampleData: SampleData) {
