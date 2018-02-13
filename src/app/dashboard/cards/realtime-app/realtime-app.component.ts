@@ -75,6 +75,10 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       noRowsOverlayComponentFramework: AgGridNoRowsOverlay,
       loadingOverlayComponentFramework: AgGridLoadingOverlay,
       onGridReady: () => {
+        this.translateService.onLangChange.takeUntil(this.ngUnsubscribe).subscribe((lang) => {
+          this.gridOptions.api!.refreshHeader();
+        });
+
         this.db.collection('groceries')
           .valueChanges()
           .takeUntil(this.ngUnsubscribe)
