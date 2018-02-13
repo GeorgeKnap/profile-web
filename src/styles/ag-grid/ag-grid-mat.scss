@@ -1,4 +1,4 @@
-@import '../material/intens-theme.scss';
+@import '../material/material-theme.scss';
 
 // adjust the icons path
 $ag-mat-icons-path: '../../node_modules/ag-grid/src/styles/material-icons/';
@@ -16,8 +16,18 @@ $ag-mat-accent: mat-color($accent);
         line-height: 42px;
     }
 
+    .ag-cell:focus{
+        outline: none;
+    }
+
 
     mat-icon{
         font-size:22px;
     }
 }
+
+.cell-number {
+    text-align: right;
+}
+
+

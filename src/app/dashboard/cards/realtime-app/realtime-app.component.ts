@@ -9,6 +9,7 @@ import { HelperService } from '../../../shared/services/helper.service';
 import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-overlay.component';
 import { AgGridLoadingOverlay } from '../../../shared/components/ag-grid-loading-overlay.component';
 import { RealtimeAppService } from './scripts/realtime-app.service';
+import { SampleData } from './models/sample-data.model';
 
 @Component({
   selector: 'gk-realtime-app',
@@ -50,24 +51,36 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
           filter: 'agNumberColumnFilter',
           headerName: this.translateService.instant('realtimeApp.headers.bid'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.bid'),
+          cellClass: 'cell-number',
+          valueFormatter: this.numberFormatter,
+          cellRenderer: 'agAnimateShowChangeCellRenderer'
         },
         {
           field: 'mid',
           filter: 'agNumberColumnFilter',
           headerName: this.translateService.instant('realtimeApp.headers.mid'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.mid'),
+          cellClass: 'cell-number',
+          valueFormatter: this.numberFormatter,
+          cellRenderer: 'agAnimateShowChangeCellRenderer'
         },
         {
           field: 'ask',
           filter: 'agNumberColumnFilter',
           headerName: this.translateService.instant('realtimeApp.headers.mid'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.mid'),
+          cellClass: 'cell-number',
+          valueFormatter: this.numberFormatter,
+          cellRenderer: 'agAnimateShowChangeCellRenderer'
         },
         {
-          field: 'ask',
+          field: 'volume',
           filter: 'agNumberColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.ask'),
-          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.ask'),
+          headerName: this.translateService.instant('realtimeApp.headers.volume'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.volume'),
+          cellClass: 'cell-number',
+          valueFormatter: this.numberFormatter,
+          cellRenderer: 'agAnimateSlideCellRenderer'
         },
       ] as Array<ColDef>,
       rowData: undefined,
@@ -83,6 +96,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       headerHeight: 48,
       suppressMenuHide: true,
       groupSelectsChildren: false,
+      getRowNodeId: (data: SampleData) => data.code,
       defaultColDef: {
         filter: 'agTextColumnFilter',
         minWidth: 100
@@ -120,6 +134,14 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+  }
+
+  private numberFormatter(params) {
+    if (typeof params.value === 'number') {
+      return params.value.toFixed(2);
+    } else {
+      return params.value;
+    }
   }
 
 }
