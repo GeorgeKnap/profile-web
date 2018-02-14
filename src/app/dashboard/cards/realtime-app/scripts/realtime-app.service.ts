@@ -8,16 +8,22 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class RealtimeAppService {
 
-private sampleDataRef: AngularFireList<SampleData>;
-
     constructor(
         private readonly af: AngularFireDatabase
     ) { }
 
-    rowUpdates(data: Array<SampleData>) {
-        Observable.interval(1000).subscribe(() => {
-            this.makeSomePriceChanges(data);
-            this.makeSomeVolumeChanges(data);
+    rowUpdates(data: Array<SampleData>): Observable<Array<SampleData>> {
+        return new Observable((observer) => {
+            const interval = setInterval(() => {
+                let changes = [];
+
+                // make some mock changes to the data
+                this.makeSomePriceChanges(changes, data);
+                this.makeSomeVolumeChanges(changes, data);
+                observer.next(changes);
+            }, 1000);
+
+            return () => clearInterval(interval);
         });
     }
 
@@ -36,10 +42,10 @@ private sampleDataRef: AngularFireList<SampleData>;
     }
 
     createData() {
-        this.sampleDataRef = this.af.list('sample-data');
+        let sampleDataRef = this.af.list('sample-data');
         for (const row of this.data()) {
             console.log('adding row: ', row);
-            this.sampleDataRef.push(row);
+            sampleDataRef.push(row);
         }
     }
 
@@ -57,7 +63,7 @@ private sampleDataRef: AngularFireList<SampleData>;
         });
     }
 
-    private makeSomeVolumeChanges(data) {
+    private makeSomeVolumeChanges(changes, data) {
         for (let i = 0; i < 10; i++) {
             // pick a data item at random
             const index = Math.floor(data.length * Math.random());
@@ -68,11 +74,11 @@ private sampleDataRef: AngularFireList<SampleData>;
             const move = (Math.floor(10 * Math.random())) - 5;
             const newValue = currentRowData.volume + move;
             currentRowData.volume = newValue;
-            //this.sampleDataRef.update();
+            changes.push(currentRowData);
         }
     }
 
-    private makeSomePriceChanges(data) {
+    private makeSomePriceChanges(changes, data) {
         // randomly update data for some rows
         for (let i = 0; i < 10; i++) {
             const index = Math.floor(data.length * Math.random());
@@ -85,6 +91,7 @@ private sampleDataRef: AngularFireList<SampleData>;
             currentRowData.mid = newValue;
 
             this.setBidAndAsk(currentRowData);
+            changes.push(currentRowData);
         }
     }
 

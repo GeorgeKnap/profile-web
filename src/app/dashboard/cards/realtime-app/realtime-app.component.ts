@@ -10,7 +10,6 @@ import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-
 import { AgGridLoadingOverlay } from '../../../shared/components/ag-grid-loading-overlay.component';
 import { RealtimeAppService } from './scripts/realtime-app.service';
 import { SampleData } from './models/sample-data.model';
-import { Observable } from '@firebase/util';
 
 @Component({
   selector: 'gk-realtime-app',
@@ -37,20 +36,17 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
         {
           field: 'code',
           filter: 'agSetColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.code'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.code')
         },
         {
           field: 'name',
           filter: 'agTextColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.name'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.name'),
           width: 300
         },
         {
           field: 'bid',
           filter: 'agNumberColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.bid'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.bid'),
           cellClass: 'cell-number',
           valueFormatter: this.numberFormatter,
@@ -59,7 +55,6 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
         {
           field: 'mid',
           filter: 'agNumberColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.mid'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.mid'),
           cellClass: 'cell-number',
           valueFormatter: this.numberFormatter,
@@ -68,8 +63,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
         {
           field: 'ask',
           filter: 'agNumberColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.mid'),
-          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.mid'),
+          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.ask'),
           cellClass: 'cell-number',
           valueFormatter: this.numberFormatter,
           cellRenderer: 'agAnimateShowChangeCellRenderer'
@@ -77,7 +71,6 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
         {
           field: 'volume',
           filter: 'agNumberColumnFilter',
-          headerName: this.translateService.instant('realtimeApp.headers.volume'),
           headerValueGetter: () => this.translateService.instant('realtimeApp.headers.volume'),
           cellClass: 'cell-number',
           valueFormatter: this.numberFormatter,
@@ -108,18 +101,17 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       localeTextFunc: (key, defaultValue) => this.helperService.agGridLang(key, defaultValue),
       noRowsOverlayComponentFramework: AgGridNoRowsOverlay,
       loadingOverlayComponentFramework: AgGridLoadingOverlay,
-      onGridReady: () => {
+      onGridReady: (params) => {
         this.translateService.onLangChange.takeUntil(this.ngUnsubscribe).subscribe((lang) => {
-          this.gridOptions.api!.refreshHeader();
+          params!.api.refreshHeader();
         });
 
-        this.realtimeAppService.getSampleData().subscribe((data) => {
-          if (!this.gridOptions.api) {
-            return;
-          }
+        this.realtimeAppService.getSampleData().takeUntil(this.ngUnsubscribe).subscribe((data) => {
           if (this.gridOptions.rowData === undefined) {
-            this.gridOptions.api!.setRowData(data);
-            this.realtimeAppService.rowUpdates(data);
+            params!.api.setRowData(data);
+            this.realtimeAppService.rowUpdates(data).takeUntil(this.ngUnsubscribe).subscribe((updates) => {
+              params!.api.updateRowData({ update: updates });
+            });
           } else {
             this.gridOptions.api!.updateRowData({ update: data });
           }

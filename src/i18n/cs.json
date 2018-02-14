@@ -107,7 +107,7 @@
     "employmentHistory": {
         "title": "Přehled pracovních zkušeností",
         "freelancer": {
-            "range": "2017 - dosud",
+            "range": "od 2017",
             "company": "Freelancer pro vývoj Progressive Web Apps",
             "p1": "Znáte pojem Progressive Web Apps? Jedná se o standard pro hybridní webové aplikace, které imitují chování nativních mobilních apliakcí a lze je na mobilní zařízení nainstalovat, podobně jako aplikace z app store.",
             "p2": "Progressive Web Apps disponují základní schopností práce v offline režimu a jsou multiplatformní. Mám rozsáhlé zkušenosti v oblasti vývoje Progressive Web Apps v cutting edge technologiích jako je platforma Angular, RxJS, Redux, Angular Material, Firebase a Ag-Grid.",
