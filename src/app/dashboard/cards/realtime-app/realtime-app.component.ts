@@ -36,7 +36,10 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
         {
           field: 'code',
           filter: 'agSetColumnFilter',
-          headerValueGetter: () => this.translateService.instant('realtimeApp.headers.code')
+          headerValueGetter: () => {
+            console.log('foo');
+            return this.translateService.instant('realtimeApp.headers.code');
+          }
         },
         {
           field: 'name',
