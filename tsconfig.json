@@ -2,11 +2,11 @@
     "compileOnSave": false,
     "compilerOptions": {
         "target": "es5",
-        "module": "esnext",
         "moduleResolution": "node",
         "mapRoot": "",
-        "baseUrl": "",
+        "baseUrl": "./",
         "sourceMap": true,
+        "declaration": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "removeComments": false,
