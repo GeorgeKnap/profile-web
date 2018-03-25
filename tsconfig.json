@@ -24,7 +24,7 @@
         "pretty": true,
         "lib": [
             "dom",
-            "es2017"
+            "esnext"
         ],
         "typeRoots": [
             "node_modules/@types/"

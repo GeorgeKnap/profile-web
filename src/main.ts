@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import { hmrBootstrap } from './hmr';
 
-declare var module: NodeModule;
+declare var module: any;
 
 const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule);
 
