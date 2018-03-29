@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/takeUntil';
+//import { takeUntil } from 'rxjs/operators';
 
 import { StorageService } from '../shared/services/storage.service';
 import { ResetGridsterService } from '../shared/services/reset-gridster.service';
