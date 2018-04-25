@@ -1,5 +1,4 @@
-﻿import { Observable } from 'rxjs/Rx';
-import { ConfirmationDialog } from './confirmation-dialog.component';
+﻿import { ConfirmationDialog } from './confirmation-dialog.component';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { Injectable } from '@angular/core';
 
@@ -13,7 +12,7 @@ export class ConfirmationDialogService {
      * @param questionKey Translate key to dialog question.
      * @param titleKey Translate key to dialog title.
      */
-    public openConfirmationDialog(questionKey?: string, titleKey?: string): Observable<boolean> {
+    public openConfirmationDialog(questionKey?: string, titleKey?: string) {
 
         let dialogRef: MatDialogRef<ConfirmationDialog>;
 

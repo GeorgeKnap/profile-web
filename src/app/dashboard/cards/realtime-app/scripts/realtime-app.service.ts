@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { SampleData } from '../models/sample-data.model';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/interval';
-import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class RealtimeAppService {
@@ -28,17 +27,20 @@ export class RealtimeAppService {
     }
 
     getSampleData() {
-        return this.af.list<SampleData>('sample-data', ref => ref.limitToFirst(200)).snapshotChanges()
-            .map(actions => {
-                return actions.map(action => {
-                    const data = action.payload.val();
-                    const id = action.payload.key;
-                    return { id, ...data } as SampleData;
-                });
-            })
-            .map((data) => {
-                return this.backFillData(data);
-            });
+        return this.af.list<SampleData>('sample-data', ref => ref.limitToFirst(200))
+            .snapshotChanges()
+            .pipe(
+                map((actions: Array<any>) => {
+                    return actions.map(action => {
+                        const data = action.payload.val();
+                        const id = action.payload.key;
+                        return { id, ...data } as SampleData;
+                    });
+                }),
+                map((data: Array<SampleData>) => {
+                    return this.backFillData(data);
+                })
+            );
     }
 
     createData() {

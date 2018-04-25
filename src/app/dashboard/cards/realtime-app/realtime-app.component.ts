@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GridOptions, ColDef } from 'ag-grid/main';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/takeUntil';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { TranslateService } from '@ngx-translate/core';
 
@@ -105,14 +105,14 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       noRowsOverlayComponentFramework: AgGridNoRowsOverlay,
       loadingOverlayComponentFramework: AgGridLoadingOverlay,
       onGridReady: (params) => {
-        this.translateService.onLangChange.takeUntil(this.ngUnsubscribe).subscribe((lang) => {
+        this.translateService.onLangChange.pipe(takeUntil(this.ngUnsubscribe)).subscribe((lang) => {
           params!.api.refreshHeader();
         });
 
-        this.realtimeAppService.getSampleData().takeUntil(this.ngUnsubscribe).subscribe((data) => {
+        this.realtimeAppService.getSampleData().pipe(takeUntil(this.ngUnsubscribe)).subscribe((data) => {
           if (this.gridOptions.rowData === undefined) {
             params!.api.setRowData(data);
-            this.realtimeAppService.rowUpdates(data).takeUntil(this.ngUnsubscribe).subscribe((updates) => {
+            this.realtimeAppService.rowUpdates(data).pipe(takeUntil(this.ngUnsubscribe)).subscribe((updates) => {
               params!.api.updateRowData({ update: updates });
             });
           } else {

@@ -1,5 +1,4 @@
 ﻿import { Injectable } from '@angular/core';
-import * as $ from 'jquery';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
@@ -23,20 +22,20 @@ export class HelperService {
         }
 
         if (rowCount === 0) {
-            $(`#${elementId}`).height('120px');
+            document.getElementById(`${elementId}`)!.setAttribute('style', 'height: 120px;');
             return;
         }
 
         if (rowCount > 15) {
-            $(`#${elementId}`).height('550px');
+            document.getElementById(`${elementId}`)!.setAttribute('style', 'height: 500px;');
             return;
         }
 
-        let count = ((rowCount + groupsCount) * 42) + 60;
+        let count = ((rowCount + groupsCount) * 48) + 60;
         if (hasFooter) {
-            count = count + 42;
+            count = count + 48;
         }
-        $(`#${elementId}`).height(count + 'px');
+        document.getElementById(`${elementId}`)!.setAttribute('style', `height: ${count}px;`);
     }
 
 

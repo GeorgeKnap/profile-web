@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GridsterConfig } from 'angular-gridster2';
-import 'rxjs/add/operator/takeUntil';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { GridItem } from './models/grid-item.model';
 import { Card } from './models/card.enum';
@@ -98,7 +98,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             this.gridItems = [...this.defaultGridItems];
         }
 
-        this.resetGridsterService.resetGridster$.takeUntil(this.ngUnsubscribe).subscribe(() => {
+        this.resetGridsterService.resetGridster$.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
             this.gridItems = [...this.defaultGridItems];
             this.storageService.setSessionItem('gk.personal-web.gridsterSettings', JSON.stringify(this.defaultGridItems));
         });

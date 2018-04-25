@@ -13,6 +13,10 @@ if (environment.production) {
     enableProdMode();
 }
 
+if ('serviceWorker' in navigator && environment.production) {
+    navigator.serviceWorker.register('/ngsw-worker.js');
+  }
+
 if (environment.hmr) {
     if (module['hot']) {
         hmrBootstrap(module, bootstrap);

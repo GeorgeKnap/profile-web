@@ -1,20 +1,20 @@
 {
-    "extends": "../tsconfig.json",
-    "compilerOptions": {
-      "outDir": "../wwwroot/spec",
-      "module": "commonjs",
-      "types": [
-        "jasmine",
-        "node"
-      ]
-    },
-    "files": [
-      "test.ts"
-    ],
-    "include": [
-      "**/*.spec.ts",
-      "**/*.d.ts",
-      "environments/environment.ts"
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../wwwroot/spec",
+    "module": "commonjs",
+    "types": [
+      "jasmine",
+      "node"
     ]
-  }
-  
+  },
+  "files": [
+    "test.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts",
+    "environments/environment.ts"
+  ]
+}
