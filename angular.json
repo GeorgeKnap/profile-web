@@ -19,7 +19,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/asssets",
+                "input": "src/assets",
                 "output": "/assets"
               },
               {
