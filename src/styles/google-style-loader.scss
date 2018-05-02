@@ -1,92 +1,71 @@
-$green: #008744;
-$blue: #0057e7;
-$red: #d62d20;
-$yellow: #ffa700;
-$white: #eee;
+// spinner
 
-// scaling... any units
-$width: 100px;
+$offset: 187;
+$duration: 1.4s;
 
-body {
-  background-color: $white;
-}
-
-// demo-specific
-.showbox {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 5%;
-}
-// end demo-specific
-
-.loader {
-  position: relative;
-  margin: 0 auto;
-  width: $width;
-  &:before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-  }
-}
-
-.circular {
-  animation: rotate 2s linear infinite;
+.preloader {
   height: 100%;
-  transform-origin: center center;
   width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  display: flex;
+  align-content: center;
+  vertical-align: middle;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
 }
 
 .path {
-  stroke-dasharray: 1, 200;
+  stroke-dasharray: $offset;
   stroke-dashoffset: 0;
-  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-  stroke-linecap: round;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite, colors ($duration*4) ease-in-out infinite;
 }
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
 
-@keyframes rotate {
+  25% {
+    stroke: #DE3E35;
+  }
+
+  50% {
+    stroke: #F7C223;
+  }
+
+  75% {
+    stroke: #1B9A59;
+  }
+
   100% {
-    transform: rotate(360deg);
+    stroke: #4285F4;
   }
 }
-
 @keyframes dash {
   0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
+    stroke-dashoffset: $offset;
   }
-  50% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -35px;
-  }
-  100% {
-    stroke-dasharray: 89, 200;
-    stroke-dashoffset: -124px;
-  }
-}
 
-@keyframes color {
-  100%,
-  0% {
-    stroke: $red;
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
   }
-  40% {
-    stroke: $blue;
-  }
-  66% {
-    stroke: $green;
-  }
-  80%,
-  90% {
-    stroke: $yellow;
+
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
   }
 }

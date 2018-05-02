@@ -1,10 +1,12 @@
 {
+  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "george-knap": {
       "root": "",
       "projectType": "application",
+      "prefix": "gk",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -13,56 +15,36 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.json",
             "assets": [
               {
-                "glob": "assets",
-                "input": "/src",
-                "output": "/"
+                "glob": "**/*",
+                "input": "src/asssets",
+                "output": "/assets"
               },
               {
-                "glob": "i18n",
-                "input": "/src",
-                "output": "/"
-              },
-              {
-                "glob": "manifest.json",
-                "input": "/src",
-                "output": "/"
+                "glob": "**/*",
+                "input": "src/i18n",
+                "output": "/i18n"
               }
             ],
             "styles": [
-              {
-                "input": "src/styles/app.scss"
-              },
-              {
-                "input": "node_modules/material-design-icons/iconfont/material-icons.css"
-              },
-              {
-                "input": "node_modules/ag-grid/src/styles/ag-grid.scss"
-              },
-              {
-                "input": "node_modules/ag-grid/src/styles/ag-theme-material.scss"
-              }
+              "src/styles/app.scss",
+              "node_modules/material-design-icons/iconfont/material-icons.css",
+              "node_modules/ag-grid/src/styles/ag-grid.scss",
+              "node_modules/ag-grid/src/styles/ag-theme-material.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": [
-              {
-                "input": "node_modules/lodash/lodash.js"
-              },
-              {
-                "input": "node_modules/hammerjs/hammer.js"
-              }
+              "node_modules/lodash/lodash.js",
+              "node_modules/hammerjs/hammer.js"
             ]
           },
           "configurations": {
-            "dev": {
-              "fileReplacements": [
-                {
-                  "from": "src/environments/environment.ts",
-                  "to": "wwwroot/environments/environment.ts"
-                }
-              ]
-            },
             "production": {
               "optimization": true,
               "outputHashing": "all",
@@ -73,18 +55,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "serviceWorker": true,
               "fileReplacements": [
                 {
-                  "from": "src/environments/environment.ts",
-                  "to": "wwwroot/undefined"
-                }
-              ]
-            },
-            "hmr": {
-              "fileReplacements": [
-                {
-                  "from": "src/environments/environment.ts",
-                  "to": "wwwroot/environments/environment.hmr.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -93,17 +68,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "george-knap:build"
+            "browserTarget": "george-knap:build",
+            "port": 4200
           },
           "configurations": {
-            "dev": {
-              "browserTarget": "george-knap:build:dev"
-            },
             "production": {
               "browserTarget": "george-knap:build:production"
-            },
-            "hmr": {
-              "browserTarget": "george-knap:build:hmr"
             }
           }
         },
@@ -111,57 +81,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "george-knap:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "karmaConfig": "karma.conf.js",
-            "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [
-              {
-                "input": "node_modules/jquery/dist/jquery.slim.js"
-              },
-              {
-                "input": "node_modules/lodash/lodash.js"
-              },
-              {
-                "input": "node_modules/hammerjs/hammer.js"
-              }
-            ],
-            "styles": [
-              {
-                "input": "src/styles/app.scss"
-              },
-              {
-                "input": "node_modules/material-design-icons/iconfont/material-icons.css"
-              },
-              {
-                "input": "node_modules/ag-grid/src/styles/ag-grid.scss"
-              },
-              {
-                "input": "node_modules/ag-grid/src/styles/ag-theme-material.scss"
-              }
-            ],
-            "assets": [
-              {
-                "glob": "assets",
-                "input": "/src",
-                "output": "/"
-              },
-              {
-                "glob": "i18n",
-                "input": "/src",
-                "output": "/"
-              },
-              {
-                "glob": "manifest.json",
-                "input": "/src",
-                "output": "/"
-              }
-            ]
           }
         },
         "lint": {
@@ -181,7 +100,9 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "gk",
-      "styleext": "scss"
+      "styleext": "scss",
+      "spec": false,
+      "skipImport": true
     },
     "@schematics/angular:directive": {
       "prefix": "gk"
