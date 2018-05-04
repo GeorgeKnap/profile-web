@@ -1,15 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { GridOptions, ColDef } from 'ag-grid/main';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { ColDef, GridOptions } from 'ag-grid/main';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-
-import { TranslateService } from '@ngx-translate/core';
-
-import { HelperService } from '../../../shared/services/helper.service';
-import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-overlay.component';
 import { AgGridLoadingOverlay } from '../../../shared/components/ag-grid-loading-overlay.component';
-import { RealtimeAppService } from './scripts/realtime-app.service';
+import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-overlay.component';
+import { HelperService } from '../../../shared/services/helper.service';
 import { SampleData } from './models/sample-data.model';
+import { RealtimeAppService } from './scripts/realtime-app.service';
+
+
 
 @Component({
   selector: 'gk-realtime-app',
@@ -37,7 +37,6 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
           field: 'code',
           filter: 'agSetColumnFilter',
           headerValueGetter: () => {
-            console.log('foo');
             return this.translateService.instant('realtimeApp.headers.code');
           }
         },
