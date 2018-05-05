@@ -91,6 +91,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       rowHeight: 42,
       headerHeight: 48,
       suppressMenuHide: true,
+      toolPanelSuppressSideButtons: true,
       groupSelectsChildren: false,
       getRowNodeId: (data: SampleData) => data.code,
       defaultColDef: {

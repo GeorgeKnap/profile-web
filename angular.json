@@ -1,12 +1,39 @@
 {
-  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "george-knap": {
+    "profile-web": {
       "root": "",
+      "sourceRoot": "src",
       "projectType": "application",
       "prefix": "gk",
+      "schematics": {
+        "@schematics/angular:class": {
+          "spec": false
+        },
+        "@schematics/angular:component": {
+          "prefix": "gk",
+          "styleext": "scss",
+          "spec": false,
+          "skipImport": true
+        },
+        "@schematics/angular:directive": {
+          "spec": false
+        },
+        "@schematics/angular:guard": {
+          "spec": false
+        },
+        "@schematics/angular:module": {
+          "spec": false
+        },
+        "@schematics/angular:pipe": {
+          "spec": false
+        },
+        "@schematics/angular:service": {
+          "spec": false
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -17,16 +44,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/i18n",
-                "output": "/i18n"
-              }
+              "src/i18n",
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles/app.scss",
@@ -46,6 +66,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -55,32 +81,26 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "serviceWorker": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "serviceWorker": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "george-knap:build",
+            "browserTarget": "profile-web:build",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "browserTarget": "george-knap:build:production"
+              "browserTarget": "profile-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "george-knap:build"
+            "browserTarget": "profile-web:build"
           }
         },
         "lint": {
@@ -90,22 +110,12 @@
               "tsconfig.json"
             ],
             "exclude": [
-              "**/node_modules/**/*"
+              "**/node_modules/**"
             ]
           }
         }
       }
     }
   },
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "gk",
-      "styleext": "scss",
-      "spec": false,
-      "skipImport": true
-    },
-    "@schematics/angular:directive": {
-      "prefix": "gk"
-    }
-  }
+  "defaultProject": "profile-web"
 }
