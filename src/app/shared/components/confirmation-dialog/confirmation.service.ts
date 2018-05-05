@@ -1,8 +1,10 @@
-﻿import { ConfirmationDialog } from './confirmation-dialog.component';
-import { MatDialogRef, MatDialog } from '@angular/material';
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { ConfirmationDialog } from './confirmation-dialog.component';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class ConfirmationDialogService {
 
     constructor(private dialog: MatDialog) { }

@@ -1,7 +1,9 @@
 ﻿import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class HelperService {
 
     constructor(
@@ -40,8 +42,8 @@ export class HelperService {
 
 
     agGridLang(key: string, defaultValue: string): string {
-        let languageKey = 'agGrid.' + key;
-        let value = this.translateService.instant(languageKey);
+        const languageKey = 'agGrid.' + key;
+        const value = this.translateService.instant(languageKey);
         return value === languageKey ? defaultValue : value;
     }
 

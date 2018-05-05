@@ -1,11 +1,8 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
-import { ConfirmationDialogService } from './shared/components/confirmation-dialog/confirmation.service';
-import { StorageService } from './shared/services/storage.service';
 import { AgGridSharedModule } from './shared/ag-grid.module';
-import { HelperService } from './shared/services/helper.service';
+
 
 @NgModule({
     imports: [
@@ -13,10 +10,7 @@ import { HelperService } from './shared/services/helper.service';
         AgGridSharedModule
     ],
     providers: [
-        Title,
-        ConfirmationDialogService,
-        StorageService,
-        HelperService
+        Title
     ]
 } as any)
 export class CoreModule {

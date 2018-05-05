@@ -1,6 +1,8 @@
 ﻿import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class StorageService {
 
     isStorageAvailable() {
@@ -26,7 +28,7 @@ export class StorageService {
 
     getSessionItem(key: string) {
         if (typeof (Storage) !== 'undefined' && window.sessionStorage) {
-            let value = window.sessionStorage.getItem(key);
+            const value = window.sessionStorage.getItem(key);
             return value;
         }
         return null;
@@ -34,7 +36,7 @@ export class StorageService {
 
     getLocalItem(key: string) {
         if (typeof (Storage) !== 'undefined' && window.localStorage) {
-            let value = window.localStorage.getItem(key);
+            const value = window.localStorage.getItem(key);
             return value;
         }
         return null;
