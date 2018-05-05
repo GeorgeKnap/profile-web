@@ -43,8 +43,16 @@
       </table>
     </article>
   </mat-card-content>
-  <mat-card-actions>
-    <a href="https://m.me/george.knap" target="_blank"><mat-icon svgIcon="gk:messenger" matTooltip="{{'aboutMe.messenger' | translate}}"></mat-icon></a>
-    <a href="https://www.linkedin.com/in/george-knap-a6839683/" target="_blank"><mat-icon svgIcon="gk:linkedin" matTooltip="{{'aboutMe.linkedin' | translate}}"></mat-icon></a>
+  <mat-card-actions fxLayout="row" fxLAyoutGap="12px">
+    <a href="https://m.me/george.knap" target="_blank">
+      <mat-icon svgIcon="gk:messenger" matTooltip="{{'aboutMe.messenger' | translate}}"></mat-icon>
+    </a>
+    <a href="https://www.linkedin.com/in/george-knap-a6839683/" target="_blank">
+      <mat-icon svgIcon="gk:linkedin" matTooltip="{{'aboutMe.linkedin' | translate}}"></mat-icon>
+    </a>
+    <button matTooltip="{{'aboutMe.cv' | translate}}" mat-button color="accent" (click)="downloadCv()">
+      <span>CV</span>
+      <mat-icon>file_download</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>

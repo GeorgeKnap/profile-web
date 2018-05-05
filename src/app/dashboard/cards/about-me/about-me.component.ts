@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from 'angularfire2/storage';
+import { Observable } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'gk-about-me',
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutMeComponent implements OnInit {
 
-  myAge: number = 33;
+  myAge = 33;
+  cvUrl$: Observable<string>;
+
+  constructor(
+    private readonly afStorage: AngularFireStorage
+  ) {
+    this.cvUrl$ = this.afStorage.ref('CV.pdf').getDownloadURL();
+  }
+
+  downloadCv() {
+    this.cvUrl$.pipe(first()).subscribe(url => window.open(url, '_blank'));
+  }
 
   toAngular() {
     window.open('https://angular.io/', '_blank');
@@ -29,8 +43,8 @@ export class AboutMeComponent implements OnInit {
     window.open('https://nativescript.org/', '_blank');
   }
 
+
   ngOnInit() {
-    //
   }
 
 }

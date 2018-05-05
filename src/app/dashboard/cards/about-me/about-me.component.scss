@@ -1,13 +1,13 @@
-.about-me-title{
-    font-size: 24px;
+.about-me-title {
+  font-size: 24px;
 }
 
-.about-me-subtitle{
-    font-size: 16px;
+.about-me-subtitle {
+  font-size: 16px;
 }
 
 .profile-image-thumbnail {
-    background-image: url('/assets/images/profilovka_card_contrast.png');
+  background-image: url('/assets/images/profilovka_card_contrast.png');
   background-size: cover;
   background-size: cover;
   width: 48px;
@@ -15,12 +15,22 @@
 }
 
 mat-card-actions {
-    a{
-        mat-icon{
-            height: 26px; 
-            width: 26px; 
-            margin-right: 12px; 
-            margin-left: 12px;
-        }
+  vertical-align: middle;
+  align-content: center;
+  align-items: center;
+
+  button {
+    margin-bottom: 4px;
+  }
+
+  a {
+    mat-icon {
+      height: 26px;
+      width: 26px;
+      margin-right: 12px;
+      margin-left: 12px;
     }
+
+  }
+
 }

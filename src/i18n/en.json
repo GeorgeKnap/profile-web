@@ -36,7 +36,8 @@
         "years": "years old",
         "technologies": "Core Technologies",
         "messenger": "Contact me at Facebook Messenger",
-        "linkedin": "LinkedIn profile"
+        "linkedin": "LinkedIn profile",
+        "cv":"Download my CV in .pdf file"
     },
     "employmentHistory": {
         "title": "Employment History",
