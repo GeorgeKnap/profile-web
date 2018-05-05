@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
-
+import { ResetGridsterService } from '../../shared/services/reset-gridster.service';
 import { SharedModule } from '../../shared/shared.module';
+import { LayoutComponent } from '../layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 
-import { LayoutComponent } from '../layout.component';
-import { DashboardModule } from '../../dashboard/scripts/dashboard.module';
-import { ResetGridsterService } from '../../shared/services/reset-gridster.service';
+
 
 
 @NgModule({
     imports: [
         SharedModule,
-        LayoutRoutingModule,
-        DashboardModule
+        LayoutRoutingModule
     ],
     declarations: [
         LayoutComponent
