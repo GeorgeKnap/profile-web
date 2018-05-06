@@ -3,5 +3,6 @@ export enum Card {
     LinkedIn = 'LinkedIn',
     EmploymentHistory = 'EmploymentHistory',
     Education = 'Education',
-    ReltimeApp = 'RealtimeApp'
+    RealtimeApp = 'RealtimeApp',
+    ContactMe = 'ContactMe'
 }

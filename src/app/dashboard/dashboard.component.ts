@@ -1,12 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GridsterConfig } from 'angular-gridster2';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-
-import { GridItem } from './models/grid-item.model';
-import { Card } from './models/card.enum';
-import { StorageService } from '../shared/services/storage.service';
 import { ResetGridsterService } from '../shared/services/reset-gridster.service';
+import { StorageService } from '../shared/services/storage.service';
+import { Card } from './models/card.enum';
+import { GridItem } from './models/grid-item.model';
+
 
 @Component({
     selector: 'gk-dashboard',
@@ -76,10 +76,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 y: 6
             },
             {
-                card: Card.ReltimeApp,
-                cols: 24,
+                card: Card.RealtimeApp,
+                cols: 14,
                 rows: 10,
                 x: 0,
+                y: 11
+            },
+            {
+                card: Card.ContactMe,
+                cols: 10,
+                rows: 10,
+                x: 14,
                 y: 11
             }
         ];
@@ -91,7 +98,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit() {
-        let storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
+        const storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
         if (storageGridster) {
             this.gridItems = JSON.parse(storageGridster);
         } else {

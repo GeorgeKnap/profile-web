@@ -37,7 +37,14 @@
         "technologies": "Core Technologies",
         "messenger": "Contact me at Facebook Messenger",
         "linkedin": "LinkedIn profile",
-        "cv":"Download my CV in .pdf file"
+        "cv": "Download my CV in .pdf file"
+    },
+    "contactMe": {
+        "title": "Contact Me",
+        "subtitle": "Don't hesitate to get in touch if you are looking for Angular developer",
+        "send": "Send",
+        "messageSent": "Your message has been sent. Thank you.",
+        "messageFailed": "Oops. Not a good day for Firebase, please contact me directly by mail or mobile."
     },
     "employmentHistory": {
         "title": "Employment History",
@@ -97,9 +104,9 @@
             "code": "Code",
             "name": "Name",
             "bid": "Bid",
-            "mid":"Mid",
-            "ask":"Ask",
-            "volume":"Volume"
+            "mid": "Mid",
+            "ask": "Ask",
+            "volume": "Volume"
         }
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GridItem } from '../../models/grid-item.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { GridItem } from '../../models/grid-item.model';
     <gk-employment-history *ngSwitchCase="'EmploymentHistory'"></gk-employment-history>
     <gk-education *ngSwitchCase="'Education'"></gk-education>
     <gk-realtime-app *ngSwitchCase="'RealtimeApp'"></gk-realtime-app>
+    <gk-contact-me *ngSwitchCase="'ContactMe'"></gk-contact-me>
     <ng-container *ngSwitchDetault></ng-container>
     </ng-container>`
 })

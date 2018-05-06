@@ -105,6 +105,13 @@
         "linkedin": "LinkedIn profil",
         "cv": "Životopis ve formátu PDF ke stažení"
     },
+    "contactMe": {
+        "title": "Napište mi zprávu",
+        "subtitle": "Neváhejte se ozvat, máte-li zájem o spolupráci",
+        "send": "Odeslat",
+        "messageSent": "Vaše zpráva byla úspěšně odeslána. Děkuji.",
+        "messageFailed": "Oops. Firebase nemá dobrý den, prosím zkontaktujte mě přímo mailem nebo telefonicky."
+    },
     "employmentHistory": {
         "title": "Přehled pracovních zkušeností",
         "freelancer": {
@@ -163,9 +170,9 @@
             "code": "Kód",
             "name": "Název",
             "bid": "Koupě",
-            "mid":"Kurz",
-            "ask":"Prodej",
-            "volume":"Objem"
+            "mid": "Kurz",
+            "ask": "Prodej",
+            "volume": "Objem"
         }
     }
 }
