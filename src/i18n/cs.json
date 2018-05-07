@@ -110,7 +110,13 @@
         "subtitle": "Neváhejte se ozvat, máte-li zájem o spolupráci",
         "send": "Odeslat",
         "messageSent": "Vaše zpráva byla úspěšně odeslána. Děkuji.",
-        "messageFailed": "Oops. Firebase nemá dobrý den, prosím zkontaktujte mě přímo mailem nebo telefonicky."
+        "messageFailed": "Oops. Firebase nemá dobrý den, prosím zkontaktujte mě přímo mailem nebo telefonicky.",
+        "name": "Jméno",
+        "company": "Společnost",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "message": "Zpráva",
+        "requiredField": "Povinné pole"
     },
     "employmentHistory": {
         "title": "Přehled pracovních zkušeností",

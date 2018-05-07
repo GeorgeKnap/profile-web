@@ -76,17 +76,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 y: 6
             },
             {
-                card: Card.RealtimeApp,
-                cols: 14,
-                rows: 10,
+                card: Card.ContactMe,
+                cols: 7,
+                rows: 11,
                 x: 0,
                 y: 11
             },
             {
-                card: Card.ContactMe,
-                cols: 10,
-                rows: 10,
-                x: 14,
+                card: Card.RealtimeApp,
+                cols: 17,
+                rows: 13,
+                x: 7,
                 y: 11
             }
         ];

@@ -41,10 +41,16 @@
     },
     "contactMe": {
         "title": "Contact Me",
-        "subtitle": "Don't hesitate to get in touch if you are looking for Angular developer",
+        "subtitle": "Don't hesitate to get in touch if you are looking for Angular enthusiast!",
         "send": "Send",
         "messageSent": "Your message has been sent. Thank you.",
-        "messageFailed": "Oops. Not a good day for Firebase, please contact me directly by mail or mobile."
+        "messageFailed": "Oops. Not a good day for Firebase, please contact me directly by mail or mobile.",
+        "name":"Name",
+        "company":"Company",
+        "email":"Email",
+        "phone":"Phone Number",
+        "message":"Message",
+        "requiredField":"Required field"
     },
     "employmentHistory": {
         "title": "Employment History",
