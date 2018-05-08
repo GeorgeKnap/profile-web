@@ -1,5 +1,5 @@
 <h3 class="draggable" translate>contactMe.title</h3>
-<form [formGroup]="contactForm" (onSubmit)="sendMessage()" novalidate>
+<form [formGroup]="contactForm" (ngSubmit)="sendMessage()" novalidate>
   <mat-card>
     <mat-card-title translate>contactMe.title</mat-card-title>
     <mat-card-subtitle translate>contactMe.subtitle</mat-card-subtitle>
