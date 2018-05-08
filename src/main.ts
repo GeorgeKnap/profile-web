@@ -13,11 +13,15 @@ if (environment.production) {
 
 if (environment.hmr) {
   if (module['hot']) {
-      hmrBootstrap(module, bootstrap);
+    hmrBootstrap(module, bootstrap);
   } else {
-      console.error('HMR is not enabled for webpack-dev-server!');
-      console.log('Are you using the --hmr flag for ng serve?');
+    console.error('HMR is not enabled for webpack-dev-server!');
+    console.log('Are you using the --hmr flag for ng serve?');
   }
 } else {
-  bootstrap();
+  bootstrap().then(() => {
+    if ('serviceWorker' in navigator && environment.production) {
+      navigator.serviceWorker.register('/ngsw-worker.js');
+    }
+  }).catch(err => console.log(err));
 }

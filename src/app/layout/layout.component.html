@@ -1,18 +1,18 @@
 <mat-toolbar>
     <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
+        <button mat-icon-button aria-label="Open sidenav" (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
             <mat-icon>menu</mat-icon>
         </button>
         <div fxFlex="1 1 auto"></div>
 
-        <button mat-icon-button (click)="resetGridster()" translate matTooltip="{{'menu.resetGridster' | translate}}" fxHide fxShow.gt-sm>
+        <button mat-icon-button (click)="resetGridster()" aria-label="Reset Grid positions" translate matTooltip="{{'menu.resetGridster' | translate}}" fxHide fxShow.gt-sm>
             <mat-icon>restore</mat-icon>
         </button>
 
-            <button mat-icon-button value="en" [ngClass]="{'lang-checked': currentLang === 'en'}" (click)="changeLang('en')" matTooltip="{{'languages.en' | translate}}"  fxHide fxShow.gt-sm>
+            <button mat-icon-button aria-label="English" value="en" [ngClass]="{'lang-checked': currentLang === 'en'}" (click)="changeLang('en')" matTooltip="{{'languages.en' | translate}}"  fxHide fxShow.gt-sm>
                 <mat-icon svgIcon="gk:en"></mat-icon>
             </button>
-            <button  mat-icon-button value="cs" [ngClass]="{'lang-checked': currentLang === 'cs'}" (click)="changeLang('cs')" matTooltip="{{'languages.cs' | translate}}"  fxHide fxShow.gt-sm>
+            <button  mat-icon-button aria-label="Czech" value="cs" [ngClass]="{'lang-checked': currentLang === 'cs'}" (click)="changeLang('cs')" matTooltip="{{'languages.cs' | translate}}"  fxHide fxShow.gt-sm>
                 <mat-icon svgIcon="gk:cs"></mat-icon>
             </button>
     </mat-toolbar-row>
@@ -27,10 +27,10 @@
                     <span translate>languages.{{ currentLang }}</span>
                 </a>
                 <mat-menu #langMenu="matMenu">
-                    <button mat-menu-item (click)="changeLang('en')">
+                    <button mat-menu-item aria-label="English" (click)="changeLang('en')">
                         <span translate>languages.en</span>
                     </button>
-                    <button mat-menu-item (click)="changeLang('cs')">
+                    <button mat-menu-item aria-label="Czech" (click)="changeLang('cs')">
                         <span translate>languages.cs</span>
                     </button>
                 </mat-menu>

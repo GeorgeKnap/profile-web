@@ -18,13 +18,13 @@
           <tr>
             <td translate>aboutMe.email</td>
             <td>
-              <a href="mailto:&#107;&#110;&#097;&#112;&#046;&#103;&#101;&#111;&#114;&#103;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#107;&#110;&#097;&#112;&#046;&#103;&#101;&#111;&#114;&#103;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
+              <a aria-label="email address" href="mailto:&#107;&#110;&#097;&#112;&#046;&#103;&#101;&#111;&#114;&#103;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#107;&#110;&#097;&#112;&#046;&#103;&#101;&#111;&#114;&#103;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
             </td>
           </tr>
           <tr>
             <td translate>aboutMe.phone</td>
             <td>
-              <a href="tel:00420777635732">+420 777 635 732</a>
+              <a aria-label="phone number" href="tel:00420777635732">+420 777 635 732</a>
             </td>
           </tr>
           <tr>
@@ -44,13 +44,13 @@
     </article>
   </mat-card-content>
   <mat-card-actions fxLayout="row" fxLAyoutGap="12px">
-    <a href="https://m.me/george.knap" target="_blank">
+    <a href="https://m.me/george.knap" target="_blank" rel="noopener" aria-label="messanger">
       <mat-icon svgIcon="gk:messenger" matTooltip="{{'aboutMe.messenger' | translate}}"></mat-icon>
     </a>
-    <a href="https://www.linkedin.com/in/george-knap-a6839683/" target="_blank">
+    <a href="https://www.linkedin.com/in/george-knap-a6839683/" target="_blank" rel="noopener" aria-label="linked in">
       <mat-icon svgIcon="gk:linkedin" matTooltip="{{'aboutMe.linkedin' | translate}}"></mat-icon>
     </a>
-    <button matTooltip="{{'aboutMe.cv' | translate}}" mat-button color="primary" (click)="downloadCv()">
+    <button matTooltip="{{'aboutMe.cv' | translate}}" aria-label="Download CV" mat-button color="primary" (click)="downloadCv()">
       <span>CV</span>
       <mat-icon>file_download</mat-icon>
     </button>

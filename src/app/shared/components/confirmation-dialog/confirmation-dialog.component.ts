@@ -11,21 +11,21 @@ import { MatDialogRef } from '@angular/material/dialog';
     <p translate>{{questionKey}}</p>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="true">
+    <button mat-button aria-label="Accept" [mat-dialog-close]="true">
         <span translate>shared.yes</span>
     </button>
-    <button mat-button [mat-dialog-close]="false">
+    <button mat-button aria-label="Cancel" [mat-dialog-close]="false">
         <span translate>shared.no</span>
     </button>
 </mat-dialog-actions>
 `
 })
-export class ConfirmationDialog {
+export class ConfirmationDialogComponent {
 
-    titleKey: string = '';
-    questionKey: string = 'shared.commonConfirmationQuestion';
+    titleKey = '';
+    questionKey = 'shared.commonConfirmationQuestion';
 
-    constructor(public dialogRef: MatDialogRef<ConfirmationDialog>) {
+    constructor(public dialogRef: MatDialogRef<ConfirmationDialogComponent>) {
 
     }
 

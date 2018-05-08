@@ -53,7 +53,7 @@
     </mat-card-content>
     <mat-card-actions fxLayout="row" fxLayoutAlign="space-between end">
         <re-captcha formControlName="recaptcha" siteKey="6LfA6VcUAAAAALULP5UNsAZdQo_E5K-iRbDQqvN-"></re-captcha>
-      <button type="submit" mat-raised-button color="primary" [disabled]="contactForm.invalid">{{'contactMe.send' | translate}}</button>
+      <button type="submit" mat-raised-button color="primary" aria-label="Send message" [disabled]="contactForm.invalid">{{'contactMe.send' | translate}}</button>
     </mat-card-actions>
   </mat-card>
 </form>
