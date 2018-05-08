@@ -22,11 +22,17 @@ export class ContactMeComponent implements OnInit {
     this.contactForm = this.fb.group({
       name: [null, Validators.required],
       company: null,
-      email: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
       phone: null,
       message: [null, Validators.required],
       recaptcha: [null, Validators.required]
     });
+  }
+
+  getEmailErrorMessage() {
+    return this.contactForm.get('email')!.hasError('required') ? this.translateService.instant('contactMe.requiredField') :
+      this.contactForm.get('email')!.hasError('email') ? 'Not a valid email' :
+        '';
   }
 
   sendMessage() {

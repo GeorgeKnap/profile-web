@@ -12,11 +12,11 @@ export const contactMe = functions.database.ref('/messages/{messageId}').onCreat
     };
     mailOptions.subject = 'Zprava z profesniho webu!';
     mailOptions.text = `
-        <b>Name:</b> ${message.name}</br>
-        <b>Company:</b> ${message.company}</br>
-        <b>Email:</b> ${message.email}</br>
-        <b>PHone:</b> ${message.phone}</br></br>
-        <b>PHone:</b> <p>${message.message}</p></br>
+        Name: ${message.name}
+        Company: ${message.company}
+        Email: ${message.email}
+        Phone: ${message.phone}
+        Message: ${message.message}
     `;
 
     return transporter.sendMail(mailOptions);

@@ -31,7 +31,7 @@
             <span>*</span>
           </mat-label>
           <input matInput type="email" formControlName="email">
-          <mat-error *ngIf="contactForm.get('email')!.invalid" translate>contactMe.requiredField</mat-error>
+          <mat-error *ngIf="contactForm.get('email')!.invalid">{{getEmailErrorMessage()}}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="standard" fxFlex>

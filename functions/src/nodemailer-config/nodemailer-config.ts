@@ -9,4 +9,5 @@ const mailConfig: any = {
     service: 'gmail'
 };
 
+console.log('nodemailer config: ',mailConfig);
 export const transporter = nodemailer.createTransport(mailConfig);
