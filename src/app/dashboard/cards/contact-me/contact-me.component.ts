@@ -34,7 +34,7 @@ export class ContactMeComponent implements OnInit {
     const date = Date();
     const formRequest = { name, company, email, phone, message, date };
     this.afDatabase.list('/messages').push(formRequest).then(() => {
-      this.matSnackBar.open(this.translateService.instant('contactMe.messageSent'));
+      this.matSnackBar.open(this.translateService.instant('contactMe.messageSent'), undefined, { duration: 5000 });
       this.contactForm.reset();
     }, (err) => {
       console.error(err);

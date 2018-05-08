@@ -1,0 +1,19 @@
+[debug] [2018-05-08T08:26:25.329Z] ----------------------------------------------------------------------
+[debug] [2018-05-08T08:26:25.332Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jiri\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-05-08T08:26:25.333Z] CLI Version:   3.18.4
+[debug] [2018-05-08T08:26:25.333Z] Platform:      win32
+[debug] [2018-05-08T08:26:25.333Z] Node Version:  v8.11.1
+[debug] [2018-05-08T08:26:25.333Z] Time:          Tue May 08 2018 10:26:25 GMT+0200 (Střední Evropa (letní čas))
+[debug] [2018-05-08T08:26:25.334Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-08T08:26:25.352Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-08T08:26:25.353Z] > authorizing via signed-in user
+[debug] [2018-05-08T08:26:25.356Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/george-knap  
+  
+ Tue May 08 2018 10:26:25 GMT+0200 (Střední Evropa (letní čas))
+[debug] [2018-05-08T08:26:26.135Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-08T08:26:26.136Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/george-knap/tokens  
+  
+ Tue May 08 2018 10:26:26 GMT+0200 (Střední Evropa (letní čas))
+[debug] [2018-05-08T08:26:26.812Z] <<< HTTP RESPONSE 200
+[info] 
