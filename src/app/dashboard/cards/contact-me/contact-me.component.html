@@ -51,7 +51,8 @@
       </mat-form-field>
 
     </mat-card-content>
-    <mat-card-actions align="end">
+    <mat-card-actions fxLayout="row" fxLayoutAlign="space-between end">
+        <re-captcha formControlName="recaptcha" siteKey="6LfA6VcUAAAAALULP5UNsAZdQo_E5K-iRbDQqvN-"></re-captcha>
       <button mat-raised-button color="primary" [disabled]="contactForm.invalid">{{'contactMe.send' | translate}}</button>
     </mat-card-actions>
   </mat-card>

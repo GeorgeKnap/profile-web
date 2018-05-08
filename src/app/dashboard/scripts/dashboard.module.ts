@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AgGridModule } from 'ag-grid-angular/main';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { AboutMeComponent } from '../cards/about-me/about-me.component';
 import { CardWrapperComponent } from '../cards/card-wrapper/card-wrapper.component';
@@ -16,7 +18,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     imports: [
         SharedModule,
         DashboardRoutingModule,
-        AgGridModule
+        AgGridModule,
+        RecaptchaModule.forRoot(),
+        RecaptchaFormsModule
     ],
     exports: [],
     declarations: [

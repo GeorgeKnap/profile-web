@@ -25,6 +25,7 @@ export class ContactMeComponent implements OnInit {
       email: [null, Validators.required],
       phone: null,
       message: [null, Validators.required],
+      recaptcha: [null, Validators.required]
     });
   }
 

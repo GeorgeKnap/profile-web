@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     gridItems!: Array<GridItem>;
     gridsterOptions: GridsterConfig = {
         gridType: 'fit',
-        keepFixedHeightInMobile: true,
         compactType: 'none',
         minCols: 24,
         maxCols: 24,
@@ -27,6 +26,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         maxRows: 60,
         outerMarginLeft: 12,
         outerMarginRight: 12,
+        outerMarginTop: 12,
         displayGrid: 'none',
         defaultItemCols: 10,
         defaultItemRows: 10,
@@ -78,7 +78,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             {
                 card: Card.ContactMe,
                 cols: 7,
-                rows: 11,
+                rows: 15,
                 x: 0,
                 y: 11
             },
