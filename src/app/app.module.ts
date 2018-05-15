@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, FirebaseOptionsToken } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { ParallaxModule } from 'ngx-parallax';
@@ -39,7 +39,7 @@ export function httpLoaderFactory(http: HttpClient) {
             }
         }),
         ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-        AngularFireModule.initializeApp(environment.firebase, 'george-knap'),
+        AngularFireModule,
         AngularFireDatabaseModule,
         AngularFireStorageModule,
         MaterialModule,
@@ -50,6 +50,9 @@ export function httpLoaderFactory(http: HttpClient) {
     ],
     declarations: [
         AppComponent
+    ],
+    providers: [
+        { provide: FirebaseOptionsToken, useValue: environment.firebase }
     ],
     bootstrap: [AppComponent]
 })
