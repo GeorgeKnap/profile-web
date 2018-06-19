@@ -10,7 +10,7 @@ import { first } from 'rxjs/operators';
 })
 export class AboutMeComponent implements OnInit {
 
-  myAge = 33;
+  myAge = this.calcAge(new Date('1984-06-06'));
   cvUrl$: Observable<string>;
 
   constructor(
@@ -45,6 +45,12 @@ export class AboutMeComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  private calcAge(dateString) {
+    const birthday = +new Date(dateString);
+    // tslint:disable-next-line:no-bitwise
+    return ~~((Date.now() - birthday) / (31557600000));
   }
 
 }
