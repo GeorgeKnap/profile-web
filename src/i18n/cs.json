@@ -120,6 +120,15 @@
     },
     "employmentHistory": {
         "title": "Přehled pracovních zkušeností",
+        "solarLog":{
+            "range":"od 2018",
+            "company": "Solar Data Systems, Inc (Solar-Log)",
+            "locationKey": "Místo",
+            "locationValue": "Praha",
+            "positionKey": "Pozice",
+            "positionValue": "Frontend Team Leader & Technical Lead",
+            "p1":"Pro společnost Solar-Log vedu nový, frontendový team. Jsem zodpovědný za architekturu a vývoj nového produktu Solar-Log WEB Enerest 4."
+        },
         "freelancer": {
             "range": "od 2017",
             "company": "Freelancer pro vývoj Progressive Web Apps",

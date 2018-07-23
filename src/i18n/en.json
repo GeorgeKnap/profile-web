@@ -54,6 +54,15 @@
     },
     "employmentHistory": {
         "title": "Employment History",
+        "solarLog":{
+            "range":"od 2018",
+            "company": "Solar Data Systems, Inc (Solar-Log)",
+            "locationKey": "Location",
+            "locationValue": "Prague",
+            "positionKey": "Position",
+            "positionValue": "Frontend Team Leader & Technical Lead",
+            "p1":"My responsibility at Solar-Log is leading new frontend team based in Prague. I am responsible for architecture and development of brand new Solar-Log WEB Enerest 4."
+        },
         "freelancer": {
             "range": "from 2017",
             "company": "Progressive Web Apps freelancer",
