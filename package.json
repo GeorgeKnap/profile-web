@@ -38,6 +38,7 @@
     "material-design-icons": "3.0.1",
     "ng-recaptcha": "4.0.0-beta.1",
     "ngx-parallax": "4.0.0",
+    "raven-js": "3.26.4",
     "rxjs": "6.2.1",
     "rxjs-compat": "6.2.1",
     "zone.js": "0.8.26"

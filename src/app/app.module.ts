@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -9,6 +9,7 @@ import { AngularFireModule, FirebaseOptionsToken } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { ParallaxModule } from 'ngx-parallax';
+import * as Raven from 'raven-js';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,13 @@ import { LayoutModule } from './layout/scripts/layout.module';
 import { MaterialModule } from './shared/material.module';
 import { WildcardRoutingModule } from './wildcard-routing.module';
 
+Raven.config('https://db8a8969752b40638c70c7de6f8c23f6@sentry.io/1249227').install();
 
+export class RavenErrorHandler implements ErrorHandler {
+    handleError(err:any) : void {
+      Raven.captureException(err);
+    }
+  }
 
 // AoT requires an exported function for factories
 export function httpLoaderFactory(http: HttpClient) {
@@ -52,7 +59,8 @@ export function httpLoaderFactory(http: HttpClient) {
         AppComponent
     ],
     providers: [
-        { provide: FirebaseOptionsToken, useValue: environment.firebase }
+        { provide: FirebaseOptionsToken, useValue: environment.firebase },
+        { provide: ErrorHandler, useClass: RavenErrorHandler }
     ],
     bootstrap: [AppComponent]
 })
