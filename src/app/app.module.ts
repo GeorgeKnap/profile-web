@@ -21,7 +21,7 @@ import { WildcardRoutingModule } from './wildcard-routing.module';
 Raven.config('https://db8a8969752b40638c70c7de6f8c23f6@sentry.io/1249227').install();
 
 export class RavenErrorHandler implements ErrorHandler {
-    handleError(err:any) : void {
+    handleError(err: any): void {
       Raven.captureException(err);
     }
   }

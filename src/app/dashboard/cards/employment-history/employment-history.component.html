@@ -1,6 +1,33 @@
 <h3 class="draggable" translate>employmentHistory.title</h3>
 <mat-accordion>
-  <mat-expansion-panel [expanded]="step === 0" hideToggle="true">
+    <mat-expansion-panel [expanded]="step === 0" hideToggle="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title translate>employmentHistory.solarLog.range</mat-panel-title>
+          <mat-panel-description translate>employmentHistory.solarLog.company</mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          <span translate>employmentHistory.solarLog.positionKey</span>:
+          <span translate class="summary-value">employmentHistory.solarLog.positionValue</span>
+        </p>
+        <p>
+          <span translate>employmentHistory.solarLog.locationKey</span>:
+          <span translate class="summary-value">employmentHistory.solarLog.locationValue</span>
+        </p>
+        <p translate>employmentHistory.solarLog.p1</p>
+        <p>
+          <span translate>employmentHistory.intens.skills</span>:
+          <mat-chip-list>
+            <mat-chip>Typescript</mat-chip>
+            <mat-chip>Angular 6</mat-chip>
+            <mat-chip>Angular Material</mat-chip>
+            <mat-chip>RxJS</mat-chip>
+            <mat-chip>Redux</mat-chip>
+            <mat-chip>Visual Studio Code</mat-chip>
+          </mat-chip-list>
+        </p>
+      </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" hideToggle="true">
     <mat-expansion-panel-header>
       <mat-panel-title translate>employmentHistory.freelancer.range</mat-panel-title>
       <mat-panel-description translate>employmentHistory.freelancer.company</mat-panel-description>
@@ -14,7 +41,7 @@
     </mat-card-actions>
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 1" hideToggle="true">
+  <mat-expansion-panel [expanded]="step === 2" hideToggle="true">
     <mat-expansion-panel-header>
       <mat-panel-title translate>employmentHistory.intens.range</mat-panel-title>
       <mat-panel-description translate>employmentHistory.intens.company</mat-panel-description>
@@ -35,7 +62,7 @@
         <mat-chip>Typescript</mat-chip>
         <mat-chip>Angular</mat-chip>
         <mat-chip>Angular Material</mat-chip>
-        <mat-chip>RxJS</mat-chip>
+        <mat-chip>RxJS 6</mat-chip>
         <mat-chip>Redux</mat-chip>
         <mat-chip>Ag-Grid</mat-chip>
         <mat-chip>ServiceStack</mat-chip>
@@ -48,7 +75,7 @@
     </p>
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 2" hideToggle="true">
+  <mat-expansion-panel [expanded]="step === 3" hideToggle="true">
     <mat-expansion-panel-header>
       <mat-panel-title translate>employmentHistory.veropath.range</mat-panel-title>
       <mat-panel-description translate>employmentHistory.veropath.company</mat-panel-description>
@@ -78,7 +105,7 @@
       </p>
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 3" hideToggle="true">
+  <mat-expansion-panel [expanded]="step === 4" hideToggle="true">
     <mat-expansion-panel-header>
       <mat-panel-title translate>employmentHistory.pscp.range</mat-panel-title>
       <mat-panel-description translate>employmentHistory.pscp.company</mat-panel-description>
