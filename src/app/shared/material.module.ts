@@ -62,6 +62,7 @@ export class MaterialModule {
         this.matIconRegistry.addSvgIconInNamespace('gk', 'messenger', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/facebook-messenger.svg'));
         this.matIconRegistry.addSvgIconInNamespace('gk', 'firebase', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/logo-firebase.svg'));
         this.matIconRegistry.addSvgIconInNamespace('gk', 'vse', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/vse.svg'));
+        this.matIconRegistry.addSvgIconInNamespace('gk', 'whatsapp', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/images/whatsapp.svg'));
     }
 
 }

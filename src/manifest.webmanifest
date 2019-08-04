@@ -1,12 +1,11 @@
 {
   "name": "George Knap",
-  "short_name": "George",
+  "short_name": "George Knap",
   "theme_color": "#F5F5F5",
   "background_color": "#fafafa",
-  "start_url": "/",
-  "scope": "/",
   "display": "standalone",
-  "orientation": "any",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "/assets/favicons/android-chrome-192x192.png",

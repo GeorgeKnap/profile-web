@@ -1,5 +1,11 @@
 {
-  "projects": {
-    "default": "george-knap"
+  "targets": {
+    "george-knap": {
+      "hosting": {
+        "pw": [
+          "george-knap"
+        ]
+      }
+    }
   }
 }

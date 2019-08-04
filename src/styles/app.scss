@@ -12,10 +12,8 @@ html, body, gk-root {
 
 
 body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-family: Roboto, sans-serif;
     background-image: url("/assets/images/devices-color0.1.png");
     background-color: $primary-color-light;
     background-size: 100%;

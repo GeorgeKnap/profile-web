@@ -103,6 +103,7 @@
         "technologies": "Expert na",
         "messenger": "Kontaktovat na Facebook Messenger",
         "linkedin": "LinkedIn profil",
+        "whatsapp": "WhatsApp",
         "cv": "Životopis ve formátu PDF ke stažení"
     },
     "contactMe": {
@@ -122,12 +123,12 @@
         "title": "Přehled pracovních zkušeností",
         "solarLog":{
             "range":"od 2018",
-            "company": "Solar Data Systems, Inc (Solar-Log)",
+            "company": "Solare Datensysteme GmbH",
             "locationKey": "Místo",
-            "locationValue": "Praha",
+            "locationValue": "Praha & Binsdorf (Německo)",
             "positionKey": "Pozice",
             "positionValue": "Frontend Team Leader & Technical Lead",
-            "p1":"Pro společnost Solar-Log vedu nový, frontendový team. Jsem zodpovědný za architekturu a vývoj nového produktu Solar-Log WEB Enerest 4."
+            "p1":"Vedení frontendového teamu. Jsem zodpovědný za architekturu a vývoj nového produktu Solar-Log WEB Enerest 4."
         },
         "freelancer": {
             "range": "od 2017",
@@ -147,7 +148,7 @@
             "skills": "Dovednosti"
         },
         "intens": {
-            "range": "od 2016",
+            "range": "2016 - 2019",
             "company": "INTENS Corporation",
             "locationKey": "Místo",
             "locationValue": "Praha",

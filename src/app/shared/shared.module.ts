@@ -4,7 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { GridsterModule } from 'angular-gridster2';
-import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+// import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { MaterialModule } from './material.module';
 
 
@@ -14,24 +14,24 @@ import { MaterialModule } from './material.module';
         CommonModule,
         ReactiveFormsModule,
         TranslateModule,
-        FlexLayoutModule,
         MaterialModule,
-        GridsterModule
+        GridsterModule,
+        FlexLayoutModule
     ],
     exports: [
         CommonModule,
         ReactiveFormsModule,
         TranslateModule,
-        FlexLayoutModule,
         MaterialModule,
-        ConfirmationDialogComponent,
-        GridsterModule
+        // ConfirmationDialogComponent,
+        GridsterModule,
+        FlexLayoutModule
     ],
     declarations: [
-        ConfirmationDialogComponent
+        // ConfirmationDialogComponent
     ],
     entryComponents: [
-        ConfirmationDialogComponent
+        // ConfirmationDialogComponent
     ]
 })
 export class SharedModule { }

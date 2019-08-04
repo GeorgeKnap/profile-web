@@ -1,8 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { SwUpdate } from '@angular/service-worker';
-import { ConfirmationDialogService } from './shared/components/confirmation-dialog/confirmation.service';
+import { TranslateService } from '@ngx-translate/core';
 import { StorageService } from './shared/services/storage.service';
 
 
@@ -15,7 +14,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(
     private readonly translateService: TranslateService,
     private readonly swUpdate: SwUpdate,
-    private readonly confirmationDialogService: ConfirmationDialogService,
+    // private readonly confirmationDialogService: ConfirmationDialogService,
     private readonly storageService: StorageService,
     private readonly titleService: Title
   ) { }
@@ -37,12 +36,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.swUpdate.available.subscribe(event => {
       console.log('SW UPDATE event: ', event);
-      this.confirmationDialogService.openConfirmationDialog(this.translateService.instant('appUpdate.question'), this.translateService.instant('appUpdate.title')).subscribe(async (isConfirmed) => {
-        if (isConfirmed) {
-          await this.swUpdate.activateUpdate();
-          document.location.reload();
-        }
-      });
+      // this.confirmationDialogService.openConfirmationDialog(this.translateService.instant('appUpdate.question'), this.translateService.instant('appUpdate.title')).subscribe(async (isConfirmed) => {
+      //   if (isConfirmed) {
+      //     await this.swUpdate.activateUpdate();
+      //     document.location.reload();
+      //   }
+      // });
 
     });
   }

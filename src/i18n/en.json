@@ -37,6 +37,7 @@
         "technologies": "Core Technologies",
         "messenger": "Contact me at Facebook Messenger",
         "linkedin": "LinkedIn profile",
+        "whatsapp": "WhatsApp",
         "cv": "Download my CV in .pdf file"
     },
     "contactMe": {
@@ -45,26 +46,26 @@
         "send": "Send",
         "messageSent": "Your message has been sent. Thank you.",
         "messageFailed": "Oops. Not a good day for Firebase, please contact me directly by mail or mobile.",
-        "name":"Name",
-        "company":"Company",
-        "email":"Email",
-        "phone":"Phone Number",
-        "message":"Message",
-        "requiredField":"Required field"
+        "name": "Name",
+        "company": "Company",
+        "email": "Email",
+        "phone": "Phone Number",
+        "message": "Message",
+        "requiredField": "Required field"
     },
     "employmentHistory": {
         "title": "Employment History",
-        "solarLog":{
-            "range":"od 2018",
-            "company": "Solar Data Systems, Inc (Solar-Log)",
+        "solarLog": {
+            "range": "since 2018",
+            "company": "Solare Datensysteme GmbH",
             "locationKey": "Location",
-            "locationValue": "Prague",
+            "locationValue": "Prague & Binsdorf (Germany)",
             "positionKey": "Position",
             "positionValue": "Frontend Team Leader & Technical Lead",
-            "p1":"My responsibility at Solar-Log is leading new frontend team based in Prague. I am responsible for architecture and development of brand new Solar-Log WEB Enerest 4."
+            "p1": "My responsibility at Solar-Log is leading new frontend team based in Prague. I am responsible for architecture and development of brand new Solar-Log WEB Enerest 4."
         },
         "freelancer": {
-            "range": "from 2017",
+            "range": "since 2017",
             "company": "Progressive Web Apps freelancer",
             "p1": "Have you heard about Progressive Web Apps? It's the standard for next generation hybrid apps that imitates the native mobile apps behavior without the need of downloading the app from the app store.",
             "p2": "The PWA features basic offline capability and cross-platform compatibility. I have decent experience creating Progressive Web Apps using the cutting edge technologies like Angular framework, Angular Material, Firebase, Redux and RxJS.",
@@ -81,7 +82,7 @@
             "skills": "Skills"
         },
         "intens": {
-            "range": "from 2016",
+            "range": "2016 - 2019",
             "company": "INTENS Corporation",
             "locationKey": "Location",
             "locationValue": "Prague",

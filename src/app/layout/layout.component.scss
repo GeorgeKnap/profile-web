@@ -1,27 +1,37 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
+:host {
+  height: 100%;
+  display: grid;
+  grid-template:
+    " toolbar " 67px
+    " content ";
 
-.mat-icon-button {
+  .mat-icon-button {
     margin-right: 12px;
     margin-left: 12px;
-}
+  }
 
-.lang-checked {
-    -webkit-filter: grayscale(100%); 
-    filter: grayscale(100%); 
-}
+  .lang-checked {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
 
-mat-sidenav {
-    width: 50vw;
-}
-
-.mat-drawer-container {
-    background-color: rgba(255,255,255,0);
-}
-
-mat-toolbar {
-    background-color: rgba(255,255,255,0);
+  mat-toolbar {
+    grid-area: toolbar;
+    background-color: rgba(255, 255, 255, 0);
     .mat-button {
-        margin: 0 5px 0 5px;
+      margin: 0 5px 0 5px;
     }
+  }
+
+  mat-sidenav-container {
+    grid-area: content;
+    background-color: rgba(255, 255, 255, 0);
+
+    mat-sidenav {
+      background-color: rgba(255, 255, 255, 0.75);
+      min-width: 200px;
+    }
+  }
 }

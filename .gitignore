@@ -4,12 +4,15 @@
 /dist
 /tmp
 /out-tsc
-/wwwroot
+# Only exists if Bazel was run
+/bazel-out
 
 # dependencies
 /node_modules
-/functions/node_modules
-/functions/lib
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
 
 # IDEs and editors
 /.idea
@@ -26,9 +29,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.vs
-obj
-bin
+.history/*
 
 # misc
 /.sass-cache

@@ -1,4 +1,4 @@
-<gridster id="gridster" [options]="gridsterOptions" *ngIf="gridItems">
+<gridster id="gridster" [options]="gridsterOptions" *ngIf="gridItems" #gridster>
     <gridster-item [item]="gridItem" *ngFor="let gridItem of gridItems">
         <gk-card-wrapper [gridItem]="gridItem"></gk-card-wrapper>
     </gridster-item>

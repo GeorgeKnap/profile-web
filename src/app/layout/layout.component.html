@@ -19,7 +19,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav opened="false" align="start" mode="over">
+    <mat-sidenav #sidenav opened="false" mode="side">
         <mat-nav-list>
             <div fxLayout="column" fxLayoutAlign="space-around center">
 
@@ -38,5 +38,8 @@
         </mat-nav-list>
     </mat-sidenav>
 
-    <router-outlet></router-outlet>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
 </mat-sidenav-container>

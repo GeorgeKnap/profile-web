@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { GridsterConfig } from 'angular-gridster2';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { CompactType, DisplayGrid, GridsterConfig, GridType } from 'angular-gridster2';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import simplebar from 'simplebar';
 import { ResetGridsterService } from '../shared/services/reset-gridster.service';
 import { StorageService } from '../shared/services/storage.service';
 import { Card } from './models/card.enum';
@@ -14,26 +15,18 @@ import { GridItem } from './models/grid-item.model';
     styleUrls: ['./dashboard.component.scss']
 })
 
-export class DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
+    @ViewChild('gridster', { static: false, read: ElementRef }) gridster: ElementRef;
 
     gridItems!: Array<GridItem>;
     gridsterOptions: GridsterConfig = {
-        gridType: 'fit',
-        compactType: 'none',
-        minCols: 24,
-        maxCols: 24,
-        minRows: 24,
-        maxRows: 60,
+        gridType: GridType.VerticalFixed,
+        fixedRowHeight: 100,
+        compactType: CompactType.None,
         outerMarginLeft: 12,
         outerMarginRight: 12,
         outerMarginTop: 12,
-        displayGrid: 'none',
-        defaultItemCols: 10,
-        defaultItemRows: 10,
-        minItemCols: 1,
-        maxItemCols: 24,
-        minItemRows: 1,
-        maxItemRows: 50,
+        displayGrid: DisplayGrid.Always,
         itemChangeCallback: (newPosition: GridItem) => {
             console.log('grid item event: ', newPosition);
             this.storageService.setSessionItem('gk.personal-web.gridsterSettings', JSON.stringify(this.gridItems));
@@ -56,38 +49,38 @@ export class DashboardComponent implements OnInit, OnDestroy {
         return [
             {
                 card: Card.AboutMe,
-                cols: 11,
-                rows: 6,
+                cols: 1,
+                rows: 4,
                 x: 0,
-                y: 0
-            },
-            {
-                card: Card.EmploymentHistory,
-                cols: 13,
-                rows: 9,
-                x: 11,
                 y: 0
             },
             {
                 card: Card.Education,
-                cols: 11,
+                cols: 1,
+                rows: 4,
+                x: 1,
+                y: 0
+            },
+            {
+                card: Card.EmploymentHistory,
+                cols: 1,
                 rows: 5,
                 x: 0,
-                y: 6
+                y: 4
             },
             {
                 card: Card.ContactMe,
-                cols: 7,
-                rows: 15,
-                x: 0,
-                y: 11
+                cols: 1,
+                rows: 5,
+                x: 1,
+                y: 4
             },
             {
                 card: Card.RealtimeApp,
-                cols: 17,
-                rows: 13,
-                x: 7,
-                y: 11
+                cols: 2,
+                rows: 5,
+                x: 0,
+                y: 9
             }
         ];
     }
@@ -98,7 +91,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit() {
-        const storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
+        //const storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
+        const storageGridster = null;
         if (storageGridster) {
             this.gridItems = JSON.parse(storageGridster);
         } else {
@@ -114,6 +108,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();
+    }
+
+    ngAfterViewInit(): void {
+        const foo = new simplebar(this.gridster.nativeElement);
     }
 
 }

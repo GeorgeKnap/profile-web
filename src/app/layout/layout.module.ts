@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { ResetGridsterService } from '../../shared/services/reset-gridster.service';
-import { SharedModule } from '../../shared/shared.module';
-import { LayoutComponent } from '../layout.component';
+import { SharedModule } from '../shared/shared.module';
 import { LayoutRoutingModule } from './layout-routing.module';
+import { LayoutComponent } from './layout.component';
 
 
 
@@ -15,9 +14,6 @@ import { LayoutRoutingModule } from './layout-routing.module';
     declarations: [
         LayoutComponent
     ],
-    entryComponents: [],
-    providers: [
-        ResetGridsterService
-    ]
+    entryComponents: []
 })
 export class LayoutModule { }

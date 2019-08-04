@@ -6,8 +6,8 @@ import { GridItem } from '../../models/grid-item.model';
     template: `
     <ng-container [ngSwitch]="gridItem.card">
     <gk-about-me *ngSwitchCase="'AboutMe'"></gk-about-me>
-    <gk-employment-history *ngSwitchCase="'EmploymentHistory'"></gk-employment-history>
     <gk-education *ngSwitchCase="'Education'"></gk-education>
+    <gk-employment-history *ngSwitchCase="'EmploymentHistory'"></gk-employment-history>
     <gk-realtime-app *ngSwitchCase="'RealtimeApp'"></gk-realtime-app>
     <gk-contact-me *ngSwitchCase="'ContactMe'"></gk-contact-me>
     <ng-container *ngSwitchDetault></ng-container>

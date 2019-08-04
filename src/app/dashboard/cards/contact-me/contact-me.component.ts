@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'gk-contact-me',
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.scss']
 })
-export class ContactMeComponent implements OnInit {
+export class ContactMeComponent implements OnInit, OnDestroy {
 
   contactForm: FormGroup;
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly afDatabase: AngularFireDatabase,
+    private readonly afDb: AngularFireDatabase,
     private readonly matSnackBar: MatSnackBar,
-    private readonly translateService: TranslateService
+    private readonly translateService: TranslateService,
+    private readonly recaptchaV3Service: ReCaptchaV3Service,
   ) {
     this.contactForm = this.fb.group({
       name: [null, Validators.required],
@@ -39,7 +41,16 @@ export class ContactMeComponent implements OnInit {
     const { name, company, email, phone, message } = this.contactForm.getRawValue();
     const date = Date();
     const formRequest = { name, company, email, phone, message, date };
-    this.afDatabase.list('/messages').push(formRequest).then(() => {
+
+    this.recaptchaV3Service.execute('contactMe').pipe(
+      // filter(response => {
+
+      // })
+    ).subscribe(response => {
+      console.log(response);
+    });
+
+    this.afDb.list('/messages').push(formRequest).then(() => {
       this.matSnackBar.open(this.translateService.instant('contactMe.messageSent'), undefined, { duration: 5000 });
       this.contactForm.reset();
     }, (err) => {
@@ -50,5 +61,7 @@ export class ContactMeComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngOnDestroy() { }
 
 }

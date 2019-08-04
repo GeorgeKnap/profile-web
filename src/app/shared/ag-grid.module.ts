@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { AgGridModule } from 'ag-grid-angular/main';
-import { LicenseManager } from 'ag-grid-enterprise/main';
+import { LoadingOverlayComponent } from './components/ag-grid-loading-overlay.component';
+import { NoRowsOverlayComponent } from './components/ag-grid-no-rows-overlay.component';
 import { SharedModule } from './shared.module';
 
-import { AgGridNoRowsOverlay } from './components/ag-grid-no-rows-overlay.component';
-import { AgGridLoadingOverlay } from './components/ag-grid-loading-overlay.component';
 
 
 @NgModule({
@@ -13,23 +12,19 @@ import { AgGridLoadingOverlay } from './components/ag-grid-loading-overlay.compo
         CommonModule,
         SharedModule,
         AgGridModule.withComponents([
-            AgGridNoRowsOverlay,
-            AgGridLoadingOverlay
+            NoRowsOverlayComponent,
+            LoadingOverlayComponent
         ]),
     ],
     declarations: [
-        AgGridNoRowsOverlay,
-        AgGridLoadingOverlay
+        NoRowsOverlayComponent,
+        LoadingOverlayComponent
     ],
     exports: [],
     entryComponents: [
-        AgGridNoRowsOverlay,
-        AgGridLoadingOverlay
+        NoRowsOverlayComponent,
+        LoadingOverlayComponent
     ],
     providers: []
 })
-export class AgGridSharedModule {
-    constructor() {
-        LicenseManager.setLicenseKey('INTENS_Corporation_s.r.o_MultiApp_1Devs31_August_2018__MTUzNTY3MDAwMDAwMA==c724073b39e4e629c4b6c88e6a76f765');
-    }
-}
+export class AgGridSharedModule { }

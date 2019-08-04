@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { ColDef, GridOptions } from 'ag-grid/main';
+import { ColDef, GridOptions } from 'ag-grid-community';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AgGridLoadingOverlay } from '../../../shared/components/ag-grid-loading-overlay.component';
-import { AgGridNoRowsOverlay } from '../../../shared/components/ag-grid-no-rows-overlay.component';
+import { LoadingOverlayComponent } from '../../../shared/components/ag-grid-loading-overlay.component';
+import { NoRowsOverlayComponent } from '../../../shared/components/ag-grid-no-rows-overlay.component';
 import { HelperService } from '../../../shared/services/helper.service';
 import { SampleData } from './models/sample-data.model';
 import { RealtimeAppService } from './scripts/realtime-app.service';
@@ -84,26 +84,24 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       suppressCellSelection: true,
       suppressRowClickSelection: true,
       suppressHorizontalScroll: false,
-      enableSorting: false,
-      enableColResize: true,
-      enableFilter: true,
       enableRangeSelection: false,
       rowHeight: 42,
       headerHeight: 48,
       suppressMenuHide: true,
-      toolPanelSuppressSideButtons: true,
       groupSelectsChildren: false,
       getRowNodeId: (data: SampleData) => data.code,
       defaultColDef: {
         filter: 'agTextColumnFilter',
-        minWidth: 100
+        minWidth: 100,
+        sortable: false,
+        resizable: true
       },
       context: {
         sourcesComponent: this
       },
       localeTextFunc: (key, defaultValue) => this.helperService.agGridLang(key, defaultValue),
-      noRowsOverlayComponentFramework: AgGridNoRowsOverlay,
-      loadingOverlayComponentFramework: AgGridLoadingOverlay,
+      noRowsOverlayComponentFramework: NoRowsOverlayComponent,
+      loadingOverlayComponentFramework: LoadingOverlayComponent,
       onGridReady: (params) => {
         this.translateService.onLangChange.pipe(takeUntil(this.ngUnsubscribe)).subscribe((lang) => {
           params!.api.refreshHeader();

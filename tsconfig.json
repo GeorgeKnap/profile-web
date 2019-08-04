@@ -1,43 +1,22 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "moduleResolution": "node",
     "baseUrl": "./",
-    "outDir": "./wwwroot",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": false,
-    "traceResolution": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "alwaysStrict": true,
-    "strictPropertyInitialization": true,
-    "pretty": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2017",
+      "es2018",
       "dom"
-    ],
-    "plugins": [
-      {
-        "name": "@angular/language-service"
-      }
     ]
-  },
-  "exclude": [
-    "node_modules",
-    "wwwroot",
-    "bin"
-  ]
+  }
 }

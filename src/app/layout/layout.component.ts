@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { Subject } from 'rxjs';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs/operators';
-
-import { StorageService } from '../shared/services/storage.service';
 import { ResetGridsterService } from '../shared/services/reset-gridster.service';
+import { StorageService } from '../shared/services/storage.service';
+import { componentDestroyed } from '../shared/utils/component-destroyed';
+
 
 
 @Component({
@@ -17,7 +17,6 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
     currentLang: string;
 
-    private ngUnsubscribe: Subject<any> = new Subject();
 
     constructor(
         private readonly translateService: TranslateService,
@@ -26,7 +25,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
         private readonly resetGridsterService: ResetGridsterService
     ) {
         this.currentLang = this.translateService.currentLang;
-        this.translateService.onLangChange.pipe(takeUntil(this.ngUnsubscribe)).subscribe((evt: LangChangeEvent) => {
+        this.translateService.onLangChange.pipe(takeUntil(componentDestroyed(this))).subscribe((evt: LangChangeEvent) => {
             this.currentLang = evt.lang;
             this.storageService.setLocalItem('gk.personal-web.lang', evt.lang);
             this.titleService.setTitle(this.translateService.instant('appHeader'));
@@ -43,12 +42,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
     }
 
 
-    async ngOnInit() {
+    ngOnInit() {
         //
     }
 
-    async ngOnDestroy() {
-        this.ngUnsubscribe.next();
-        this.ngUnsubscribe.complete();
+    ngOnDestroy() {
     }
 }
