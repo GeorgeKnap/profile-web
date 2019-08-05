@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     gridsterOptions: GridsterConfig = {
         gridType: GridType.VerticalFixed,
         fixedRowHeight: 100,
+        maxCols: 2,
         compactType: CompactType.None,
         outerMarginLeft: 12,
         outerMarginRight: 12,
@@ -63,7 +64,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             {
                 card: Card.EmploymentHistory,
                 cols: 1,
-                rows: 5,
+                rows: 6,
                 x: 0,
                 y: 4
             },
@@ -90,7 +91,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit() {
-        const storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
+        // const storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
+        const storageGridster = null;
         if (storageGridster) {
             this.gridItems = JSON.parse(storageGridster);
         } else {

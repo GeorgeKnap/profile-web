@@ -9,10 +9,10 @@
             <mat-icon>restore</mat-icon>
         </button>
 
-            <button mat-icon-button aria-label="English" value="en" [ngClass]="{'lang-checked': currentLang === 'en'}" (click)="changeLang('en')" matTooltip="{{'languages.en' | translate}}"  fxHide fxShow.gt-sm>
+            <button mat-icon-button aria-label="English" value="en" [ngClass]="{'lang-checked': currentLang === 'cs'}" (click)="changeLang('en')" matTooltip="{{'languages.en' | translate}}"  fxHide fxShow.gt-sm>
                 <mat-icon svgIcon="gk:en"></mat-icon>
             </button>
-            <button  mat-icon-button aria-label="Czech" value="cs" [ngClass]="{'lang-checked': currentLang === 'cs'}" (click)="changeLang('cs')" matTooltip="{{'languages.cs' | translate}}"  fxHide fxShow.gt-sm>
+            <button  mat-icon-button aria-label="Czech" value="cs" [ngClass]="{'lang-checked': currentLang === 'en'}" (click)="changeLang('cs')" matTooltip="{{'languages.cs' | translate}}"  fxHide fxShow.gt-sm>
                 <mat-icon svgIcon="gk:cs"></mat-icon>
             </button>
     </mat-toolbar-row>

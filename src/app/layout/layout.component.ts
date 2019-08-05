@@ -33,8 +33,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     }
 
     changeLang(lang: string) {
-        this.currentLang = lang;
-        this.translateService.use(this.currentLang);
+        this.translateService.use(lang);
     }
 
     resetGridster() {

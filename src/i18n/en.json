@@ -55,6 +55,7 @@
     },
     "employmentHistory": {
         "title": "Employment History",
+        "skills": "Skills",
         "solarLog": {
             "range": "since 2018",
             "company": "Solare Datensysteme GmbH",
@@ -62,7 +63,8 @@
             "locationValue": "Prague & Binsdorf (Germany)",
             "positionKey": "Position",
             "positionValue": "Frontend Team Leader & Technical Lead",
-            "p1": "My responsibility at Solar-Log is leading new frontend team based in Prague. I am responsible for architecture and development of brand new Solar-Log WEB Enerest 4."
+            "p1": "My responsibility at Solar-Log is leading new frontend team based in Prague. I am responsible for architecture and development of brand new Solar-Log WEB Enerest 4.",
+            "libraries": "Library architecture"
         },
         "freelancer": {
             "range": "since 2017",
@@ -89,8 +91,7 @@
             "positionKey": "Position",
             "positionValue": "Angular platform Lead Developer & Technical Lead",
             "p1": "At INTENS Corporation I've been responsible for creating Angular & AngularJS Web Apps. My role is technical lead, I design the app's architecture and I decide the technologies to use at front-end side. My apps communicate via ServiceStack API with .NET servers. Server-Sent Events technology used for realtime data pushing. I've also been mentoring junior colleagues.",
-            "p2": "Our products focus on transport telematics and GIS (Geographic Information Systems)",
-            "skills": "Skills"
+            "p2": "Our products focus on transport telematics and GIS (Geographic Information Systems)"
         },
         "pscp": {
             "range": "2010 - 2014",
@@ -100,8 +101,7 @@
             "positionKey": "Position",
             "positionValue": "T-SQL developer, později C# Developer",
             "p1": "At Pension Fund I was a developer of an application responsible for managing pension accounts. Between 2010-2013 I was creating T-SQL stored porcedures and application layer in PowerBuilder.",
-            "p2": "From 2013 I joined a team to create new pension management system using C#/.NET 4.5",
-            "skills": "Skills"
+            "p2": "From 2013 I joined a team to create new pension management system using C#/.NET 4.5"
         }
     },
     "education": {

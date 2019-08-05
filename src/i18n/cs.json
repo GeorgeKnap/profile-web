@@ -121,6 +121,7 @@
     },
     "employmentHistory": {
         "title": "Přehled pracovních zkušeností",
+        "skills": "Dovednosti",
         "solarLog":{
             "range":"od 2018",
             "company": "Solare Datensysteme GmbH",
@@ -128,7 +129,9 @@
             "locationValue": "Praha & Binsdorf (Německo)",
             "positionKey": "Pozice",
             "positionValue": "Frontend Team Leader & Technical Lead",
-            "p1":"Vedení frontendového teamu. Jsem zodpovědný za architekturu a vývoj nového produktu Solar-Log WEB Enerest 4."
+            "p1":"Vedení frontendového teamu. Jsem zodpovědný za architekturu a vývoj nového produktu Solar-Log WEB Enerest 4.",
+            "libraries": "Library architecture"
+
         },
         "freelancer": {
             "range": "od 2017",
@@ -144,8 +147,7 @@
             "locationValue": "Edinburgh - Skotsko, UK",
             "positionKey": "Pozice",
             "positionValue": "AngularJS Developer",
-            "p1": "Ve společnosti Veropath jsem byl součástí týmu vývoje webového systému pro analýzu telefonních nákladů.",
-            "skills": "Dovednosti"
+            "p1": "Ve společnosti Veropath jsem byl součástí týmu vývoje webového systému pro analýzu telefonních nákladů."
         },
         "intens": {
             "range": "2016 - 2019",
