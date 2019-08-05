@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AgGridModule } from 'ag-grid-angular/main';
-import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
-import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { RecaptchaModule } from 'ng-recaptcha';
 import { SharedModule } from './../shared/shared.module';
 import { AboutMeComponent } from './cards/about-me/about-me.component';
 import { CardWrapperComponent } from './cards/card-wrapper/card-wrapper.component';
@@ -18,8 +17,7 @@ import { DashboardComponent } from './dashboard.component';
         SharedModule,
         DashboardRoutingModule,
         AgGridModule,
-        RecaptchaV3Module,
-        RecaptchaFormsModule
+        RecaptchaModule
     ],
     exports: [],
     declarations: [
@@ -30,9 +28,6 @@ import { DashboardComponent } from './dashboard.component';
         EducationComponent,
         RealtimeAppComponent,
         ContactMeComponent
-    ],
-    providers: [
-        { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LfVMbEUAAAAAA-W0H_E8UvbIxbro8FUWGcgPuLA' }
     ]
 })
 export class DashboardModule { }

@@ -3,7 +3,6 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'gk-contact-me',
@@ -18,16 +17,14 @@ export class ContactMeComponent implements OnInit, OnDestroy {
     private readonly fb: FormBuilder,
     private readonly afDb: AngularFireDatabase,
     private readonly matSnackBar: MatSnackBar,
-    private readonly translateService: TranslateService,
-    private readonly recaptchaV3Service: ReCaptchaV3Service,
+    private readonly translateService: TranslateService
   ) {
     this.contactForm = this.fb.group({
       name: [null, Validators.required],
       company: null,
       email: [null, [Validators.required, Validators.email]],
       phone: null,
-      message: [null, Validators.required],
-      recaptcha: [null, Validators.required]
+      message: [null, Validators.required]
     });
   }
 
@@ -37,18 +34,18 @@ export class ContactMeComponent implements OnInit, OnDestroy {
         '';
   }
 
-  sendMessage() {
+  captchaResolved(captchaResponse: string) {
+    if (!captchaResponse || !captchaResponse.length) {
+      return;
+    }
+    this.sendMessage();
+  }
+
+  private sendMessage() {
     const { name, company, email, phone, message } = this.contactForm.getRawValue();
     const date = Date();
     const formRequest = { name, company, email, phone, message, date };
 
-    this.recaptchaV3Service.execute('contactMe').pipe(
-      // filter(response => {
-
-      // })
-    ).subscribe(response => {
-      console.log(response);
-    });
 
     this.afDb.list('/messages').push(formRequest).then(() => {
       this.matSnackBar.open(this.translateService.instant('contactMe.messageSent'), undefined, { duration: 5000 });

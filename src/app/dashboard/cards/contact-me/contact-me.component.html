@@ -1,5 +1,5 @@
 <h3 class="draggable" translate>contactMe.title</h3>
-<form [formGroup]="contactForm" (ngSubmit)="sendMessage()" novalidate>
+<form [formGroup]="contactForm" (ngSubmit)="captchaRef.execute()" novalidate>
   <mat-card>
     <mat-card-title translate>contactMe.title</mat-card-title>
     <mat-card-subtitle translate>contactMe.subtitle</mat-card-subtitle>
@@ -52,7 +52,10 @@
 
     </mat-card-content>
     <mat-card-actions align="end">
-      <button type="submit" mat-raised-button color="primary" aria-label="Send message" [disabled]="contactForm.invalid">{{'contactMe.send' | translate}}</button>
+      <re-captcha #captchaRef="reCaptcha" (resolved)="captchaResolved($event)"
+        siteKey="6LdeP7EUAAAAABbN69DZqmZ5R9KModOIy9abyGmh" size="invisible"></re-captcha>
+      <button type="submit" mat-raised-button color="primary" aria-label="Send message"
+        [disabled]="contactForm.invalid">{{'contactMe.send' | translate}}</button>
     </mat-card-actions>
   </mat-card>
 </form>
