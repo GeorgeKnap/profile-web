@@ -3,7 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { ColDef, GridOptions } from 'ag-grid-community';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { LoadingOverlayComponent } from '../../../shared/components/ag-grid-loading-overlay.component';
 import { NoRowsOverlayComponent } from '../../../shared/components/ag-grid-no-rows-overlay.component';
 import { HelperService } from '../../../shared/services/helper.service';
 import { SampleData } from './models/sample-data.model';
@@ -18,7 +17,7 @@ import { RealtimeAppService } from './scripts/realtime-app.service';
 })
 export class RealtimeAppComponent implements OnInit, OnDestroy {
 
-  gridOptions!: GridOptions;
+  gridOptions: GridOptions;
 
   private readonly ngUnsubscribe: Subject<any> = new Subject();
 
@@ -31,6 +30,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
     this.gridOptions = {
       columnDefs: [
         {
@@ -101,7 +101,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       },
       localeTextFunc: (key, defaultValue) => this.helperService.agGridLang(key, defaultValue),
       noRowsOverlayComponentFramework: NoRowsOverlayComponent,
-      loadingOverlayComponentFramework: LoadingOverlayComponent,
+      //loadingOverlayComponentFramework: LoadingOverlayComponent, //not working in ag grid 21.0.1
       onGridReady: (params) => {
         this.translateService.onLangChange.pipe(takeUntil(this.ngUnsubscribe)).subscribe((lang) => {
           params!.api.refreshHeader();

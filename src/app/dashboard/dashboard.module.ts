@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AgGridModule } from 'ag-grid-angular/main';
+import { AgGridModule } from 'ag-grid-angular';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { SharedModule } from './../shared/shared.module';
 import { AboutMeComponent } from './cards/about-me/about-me.component';
@@ -16,7 +16,7 @@ import { DashboardComponent } from './dashboard.component';
     imports: [
         SharedModule,
         DashboardRoutingModule,
-        AgGridModule,
+        AgGridModule.withComponents([]),
         RecaptchaModule
     ],
     exports: [],
