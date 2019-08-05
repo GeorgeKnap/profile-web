@@ -101,7 +101,7 @@ export class RealtimeAppComponent implements OnInit, OnDestroy {
       },
       localeTextFunc: (key, defaultValue) => this.helperService.agGridLang(key, defaultValue),
       noRowsOverlayComponentFramework: NoRowsOverlayComponent,
-      //loadingOverlayComponentFramework: LoadingOverlayComponent, //not working in ag grid 21.0.1
+      // loadingOverlayComponentFramework: LoadingOverlayComponent, //not working in ag grid 21.1.1
       onGridReady: (params) => {
         this.translateService.onLangChange.pipe(takeUntil(this.ngUnsubscribe)).subscribe((lang) => {
           params!.api.refreshHeader();
