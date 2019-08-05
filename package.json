@@ -29,7 +29,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "@sentry/browser": "^5.4.3",
     "ag-grid-angular": "^21.0.1",
-    "ag-grid-community": "^21.0.1",
+    "ag-grid-community": "^21.1.1",
     "angular-gridster2": "^8.0.0",
     "firebase": ">= 5.5.7 <7",
     "hammerjs": "^2.0.8",
