@@ -29,8 +29,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles/app.scss",
-              "node_modules/simplebar/dist/simplebar.css"
+              "src/styles/app.scss"
             ],
             "scripts": []
           },

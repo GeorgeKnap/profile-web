@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CompactType, DisplayGrid, GridsterConfig, GridType } from 'angular-gridster2';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import simplebar from 'simplebar';
 import { ResetGridsterService } from '../shared/services/reset-gridster.service';
 import { StorageService } from '../shared/services/storage.service';
 import { Card } from './models/card.enum';
@@ -15,7 +14,7 @@ import { GridItem } from './models/grid-item.model';
     styleUrls: ['./dashboard.component.scss']
 })
 
-export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
+export class DashboardComponent implements OnInit, OnDestroy {
     @ViewChild('gridster', { static: false, read: ElementRef }) gridster: ElementRef;
 
     gridItems!: Array<GridItem>;
@@ -91,8 +90,7 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     ) { }
 
     ngOnInit() {
-        //const storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
-        const storageGridster = null;
+        const storageGridster = this.storageService.getSessionItem('gk.personal-web.gridsterSettings');
         if (storageGridster) {
             this.gridItems = JSON.parse(storageGridster);
         } else {
@@ -108,10 +106,6 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnDestroy() {
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();
-    }
-
-    ngAfterViewInit(): void {
-        const foo = new simplebar(this.gridster.nativeElement);
     }
 
 }
