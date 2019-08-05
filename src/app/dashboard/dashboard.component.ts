@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         outerMarginLeft: 12,
         outerMarginRight: 12,
         outerMarginTop: 12,
-        displayGrid: DisplayGrid.Always,
+        displayGrid: DisplayGrid.None,
         itemChangeCallback: (newPosition: GridItem) => {
             console.log('grid item event: ', newPosition);
             this.storageService.setSessionItem('gk.personal-web.gridsterSettings', JSON.stringify(this.gridItems));
